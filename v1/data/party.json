@@ -1,28 +1,39 @@
 [
     {
-        "character": "Select A Character",
-        "job": "Select A Class"
+        "character": {
+            "name":"unselected",
+            "sprite":"character_unselected.png"
+        },
+        "job": "unselected"
     },
-
     {
-        "character": "Select A Character",
-        "job": "Select A Class"
+        "character": {
+            "name":"unselected",
+            "sprite":"character_unselected.png"
+        },
+        "job": "unselected"
     }
     ,
-
     {
-        "character": "Select A Character",
-        "job": "Select A Class"
+        "character": {
+            "name":"unselected",
+            "sprite":"character_unselected.png"
+        },
+        "job": "unselected"
     },
-
     {
-        "character": "Select A Character",
-        "job": "Select A Class"
+        "character": {
+            "name":"unselected",
+            "sprite":"character_unselected.png"
+        },
+        "job": "unselected"
     },
-
     {
-        "character": "Select A Character",
-        "job": "Select A Class"
+        "character": {
+            "name":"unselected",
+            "sprite":"character_unselected.png"
+        },
+        "job": "unselected"
     }
 ]
 

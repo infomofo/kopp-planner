@@ -54,15 +54,18 @@
           <div class="row well" ng-repeat="member in party">
             <ul class="party_member">
               <li class="dropdown">
-                <a class="dropdown-toggle well"><i class="icon-question-sign"></i></a>
+                <a class="dropdown-toggle well">
+                    <img src="img/{{member.character.sprite}}"/>
+                    <span><b class="caret"></b></span>
+                  </a>
                 <ul class="dropdown-menu">
                   <li ng-repeat="character in unselectedCharacters()">
-                    <a ng-click="member.character=character.name">{{character.name}}</a>
+                    <a ng-click="member.character=character"><img src="img/{{character.sprite}}"/>{{character.name}}</a>
                   </li>
                 </ul>
               </li>
               <li class="dropdown">
-                <a class="dropdown-toggle well"><i class="icon-question-sign"></i></a>
+                <a class="dropdown-toggle well"><i class="icon-question-sign"></i><b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li ng-repeat="job in unselectedJobs()">
                     <a ng-click="member.job=job.name">{{job.name}}</a>

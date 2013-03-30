@@ -10,6 +10,10 @@ ul.party_member  {
   margin-left:10px;
 }
 
+.party_member img {
+  vertical-align:middle;
+}
+
 .party_member li {
   display: inline;
   padding: 0;

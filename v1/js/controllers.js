@@ -22,7 +22,7 @@ function PartyController($scope, $http, $location) {
     angular.forEach($scope.characters, function(character) {
       var isSelected = false;
       angular.forEach($scope.party, function(member) {
-        if (member.character == character.name)
+        if (member.character.name == character.name)
           isSelected = true;
       });
 
