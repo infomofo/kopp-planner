@@ -38,7 +38,7 @@ function PartyController($scope, $http, $location) {
     angular.forEach($scope.jobs, function(job) {
       var isSelected = false;
       angular.forEach($scope.party, function(member) {
-        if (member.job == job.name)
+        if (member.job.name == job.name)
           isSelected = true;
       });
 

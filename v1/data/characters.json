@@ -1,35 +1,118 @@
 [
     {
         "name": "E.T.",
-        "bonus":{
-            "description":"Recover 1 MP per turn",
-            "mpt":1
+        "bonus": {
+            "description": "Recover 1 MP per turn",
+            "mpt": 1
         },
-        "sprite":"character_et.png"
+        "sprite": "character_et.png"
     },
     {
         "name": "Flowers",
-        "bonus":{
-            "description":"Extra 1 point on dice rolls",
-            "dice":1
+        "bonus": {
+            "description": "Extra 1 point on dice rolls",
+            "dice": 1
         },
-        "sprite":"character_flowers.png"
+        "sprite": "character_flowers.png"
     },
     {
         "name": "Grandma",
-        "bonus":{
-            "description":"+2 threat",
-            "threat":2
+        "bonus": {
+            "description": "+2 threat",
+            "threat": 2
         },
-        "sprite":"character_grandma.png"
+        "sprite": "character_grandma.png"
     },
     {
         "name": "Hipster",
-        "bonus":{
-            "description":"50% faster blacksmith crafting",
-            "crafting_speed_pct":50
+        "bonus": {
+            "description": "50% faster blacksmith crafting",
+            "crafting_speed_pct": 50
         },
-        "sprite":"character_hipster.png"
+        "sprite": "character_hipster.png"
+    },
+    {
+        "name": "Hynx",
+        "bonus": {
+            "description": "+1 skill duration",
+            "skill_duration": 1
+        },
+        "sprite": "character_hynx.png"
+    },
+    {
+        "name": "Jock",
+        "bonus": {
+            "description": "+1 Attack",
+            "attack": 1
+        },
+        "sprite": "character_jock.png"
+    },
+    {
+        "name": "Little Brother",
+        "bonus": {
+            "description": "+1 Initiative",
+            "initiative": 1
+        },
+        "sprite": "character_littlebrother.png"
+    },
+    {
+        "name": "Mr. John",
+        "bonus": {
+            "description": "+10% XP",
+            "xp_pct": 10
+        },
+        "sprite": "character_mrjohn.png"
+    },
+    {
+        "name": "Ms. Goldberry",
+        "bonus": {
+            "description": "+3% HP, +3% MP, +2% HP steal, +2% MP steal, +2% XP",
+            "hp_pct": 3,
+            "mp_pct": 3,
+            "hp_steal_pct": 2,
+            "mp_steal_pct": 2,
+            "xp_pct": 2
+        },
+        "sprite": "character_msgoldberry.png"
+    },
+    {
+        "name": "Nerd",
+        "bonus": {
+            "description": "50% discount to resurrect",
+            "resurrect_discount_pct": 50
+        },
+        "sprite": "character_nerd.png"
+    },
+    {
+        "name": "Paris",
+        "bonus": {
+            "description": "50% discount on Blacksmith upgrades",
+            "blacksmith_upgrade_discount_pct": 50
+        },
+        "sprite": "character_paris.png"
+    },
+    {
+        "name": "Pizza Guy",
+        "bonus": {
+            "description": "50% discount to buy this player",
+            "player_cost_pct": 50
+        },
+        "sprite": "character_pizzaguy.png"
+    },
+    {
+        "name": "Rocker",
+        "bonus": {
+            "description": "+5 health",
+            "hp": 5
+        },
+        "sprite": "character_rocker.png"
+    },
+    {
+        "name": "Woofie",
+        "bonus": {
+            "description": "Heal 1 HP per turn",
+            "hpt": 1
+        },
+        "sprite": "character_woofie.png"
     }
 ]
-

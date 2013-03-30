@@ -22,6 +22,10 @@ ul.party_member  {
   padding-left: 0;
 }
 
+span.ability-level {
+  position:absolute;
+}
+
 /* Wrapper for page content to push down footer */
 #wrap {
   min-height: 100%;

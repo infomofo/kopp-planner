@@ -1,23 +1,113 @@
 [
-{"name":"Barbarian",
-"role": ["Tank","Damage (physical)"],
-"attack":  2,
-"hp":8,
-"magic":2,
-"threat":3,
-"initiative":3,
-"critical_pct":1,
-"step":{"attack":0.7,"hp":6,"mp":2}
-},
-{"name":"Bard",
-"role": ["Heal"],
-"attack": 2,
-"hp":  8,
-"magic": 4,
-"threat": 3,
-"initiative": 1,
-"critical_pct": 1,
-"step":{"attack":0.7,"hp":5,"mp":4}
-}
+    {
+        "name": "Barbarian",
+        "role": [
+            "Tank",
+            "Damage (physical)"
+        ],
+        "attack": 2,
+        "hp": 8,
+        "magic": 2,
+        "threat": 3,
+        "initiative": 3,
+        "critical_pct": 1,
+        "step": {
+            "attack": 0.7,
+            "hp": 6,
+            "mp": 2
+        },
+        "abilities": [
+            {
+                "name": "Adren Rush",
+                "image": "ability_adrenrush.png"
+            },
+            {
+                "name": "Sharpen Axe",
+                "image": "ability_sharpenaxe.png"
+            },
+            {
+                "name": "Berserk",
+                "image": "ability_berserk.png"
+            },
+            {
+                "name": "Blood Seeker",
+                "image": "ability_bloodseeker.png"
+            }
+        ]
+    },
+    {
+        "name": "Bard",
+        "role": [
+            "Heal"
+        ],
+        "attack": 2,
+        "hp": 8,
+        "magic": 4,
+        "threat": 3,
+        "initiative": 1,
+        "critical_pct": 1,
+        "step": {
+            "attack": 0.7,
+            "hp": 5,
+            "mp": 4
+        },
+        "abilities": [
+            {
+                "name": "Dissonance",
+                "description": "An unstable tone combination that deals damage to all targets.",
+                "type": "Damage",
+                "target": "All Enemies",
+                "image": "ability_dissonance.png",
+                "mp": 3,
+                "damage": 2,
+                "step": {
+                    "mp": 3,
+                    "damage": 1.5
+                },
+                "dpm": 0.14
+            },
+            {
+                "name": "Harmonic Movement",
+                "description": "The bard plays a harmonic note that heals a friendly target and itself.",
+                "type": "Heal",
+                "target": [
+                    "Caster",
+                    "Party Member"
+                ],
+                "image": "ability_harmonicmovement.png",
+                "mp": 4,
+                "heal": 10,
+                "step": {
+                    "mp": 2,
+                    "heal": 7
+                }
+            },
+            {
+                "name": "Octavarium",
+                "description": "The bard sings a song that heals every group member for 2 turns",
+                "type": "Heal",
+                "target": "Party",
+                "image": "ability_octavarium.png",
+                "mp": 3,
+                "heal": 3,
+                "step": {
+                    "mp": 2,
+                    "heal": 3
+                }
+            },
+            {
+                "name": "Power Chord",
+                "description": "The bard plays the root note of the chord, raising all your group's attack for 5 turns.",
+                "type": "Buff",
+                "target": "Party",
+                "image": "ability_powerchord.png",
+                "mp": 3,
+                "attack": 2,
+                "step": {
+                    "mp": 2,
+                    "attack": 2
+                }
+            }
+        ]
+    }
 ]
-

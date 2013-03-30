@@ -1,39 +1,37 @@
 [
     {
         "character": {
-            "name":"unselected",
-            "sprite":"character_unselected.png"
+            "name": "unselected",
+            "sprite": "character_unselected.png"
         },
         "job": "unselected"
     },
     {
         "character": {
-            "name":"unselected",
-            "sprite":"character_unselected.png"
-        },
-        "job": "unselected"
-    }
-    ,
-    {
-        "character": {
-            "name":"unselected",
-            "sprite":"character_unselected.png"
+            "name": "unselected",
+            "sprite": "character_unselected.png"
         },
         "job": "unselected"
     },
     {
         "character": {
-            "name":"unselected",
-            "sprite":"character_unselected.png"
+            "name": "unselected",
+            "sprite": "character_unselected.png"
         },
         "job": "unselected"
     },
     {
         "character": {
-            "name":"unselected",
-            "sprite":"character_unselected.png"
+            "name": "unselected",
+            "sprite": "character_unselected.png"
+        },
+        "job": "unselected"
+    },
+    {
+        "character": {
+            "name": "unselected",
+            "sprite": "character_unselected.png"
         },
         "job": "unselected"
     }
 ]
-

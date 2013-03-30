@@ -50,7 +50,7 @@
 
       <h1>Knights of Pen and Paper Party Planner</h1>
       <p>Plan builds for characters in your Knights of Pen and Paper Party.</p>
-        <div class="row span6">
+        <div class="row span5">
           <div class="row well" ng-repeat="member in party">
             <ul class="party_member">
               <li class="dropdown">
@@ -59,8 +59,8 @@
                     <span><b class="caret"></b></span>
                   </a>
                 <ul class="dropdown-menu">
-                  <li ng-repeat="character in unselectedCharacters()">
-                    <a ng-click="member.character=character"><img src="img/{{character.sprite}}"/>{{character.name}}</a>
+                  <li ng-repeat="character in unselectedCharacters()" >
+                    <a ng-click="member.character=character">{{character.name}}</a>
                   </li>
                 </ul>
               </li>
@@ -68,9 +68,14 @@
                 <a class="dropdown-toggle well"><i class="icon-question-sign"></i><b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li ng-repeat="job in unselectedJobs()">
-                    <a ng-click="member.job=job.name">{{job.name}}</a>
+                    <a ng-click="member.job=job"> {{job.name}}</a>
                   </li>
                 </ul>
+              </li>
+
+              <li ng-repeat="ability in member.job.abilities">
+                <span class="badge badge-info ability-level">0</span>
+                <a class="Well"><img src="img/{{ability.image}}"/></a>
               </li>
             </ul>
           </div>
