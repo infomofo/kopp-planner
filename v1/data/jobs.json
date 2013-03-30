@@ -11,6 +11,7 @@
         "threat": 3,
         "initiative": 3,
         "critical_pct": 1,
+        "sprite": "class_barbarian.png",
         "step": {
             "attack": 0.7,
             "hp": 6,
@@ -46,6 +47,7 @@
         "threat": 3,
         "initiative": 1,
         "critical_pct": 1,
+        "sprite": "class_bard.png",
         "step": {
             "attack": 0.7,
             "hp": 5,

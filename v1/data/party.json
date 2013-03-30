@@ -4,34 +4,49 @@
             "name": "unselected",
             "sprite": "character_unselected.png"
         },
-        "job": "unselected"
+        "job": {
+            "name": "unselected",
+            "sprite": "character_unselected.png"
+        }
     },
     {
         "character": {
             "name": "unselected",
             "sprite": "character_unselected.png"
         },
-        "job": "unselected"
+        "job": {
+            "name": "unselected",
+            "sprite": "character_unselected.png"
+        }
     },
     {
         "character": {
             "name": "unselected",
             "sprite": "character_unselected.png"
         },
-        "job": "unselected"
+        "job": {
+            "name": "unselected",
+            "sprite": "character_unselected.png"
+        }
     },
     {
         "character": {
             "name": "unselected",
             "sprite": "character_unselected.png"
         },
-        "job": "unselected"
+        "job": {
+            "name": "unselected",
+            "sprite": "character_unselected.png"
+        }
     },
     {
         "character": {
             "name": "unselected",
             "sprite": "character_unselected.png"
         },
-        "job": "unselected"
+        "job": {
+            "name": "unselected",
+            "sprite": "character_unselected.png"
+        }
     }
 ]

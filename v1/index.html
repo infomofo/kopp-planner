@@ -54,18 +54,18 @@
           <div class="row well" ng-repeat="member in party">
             <ul class="party_member">
               <li class="dropdown">
-                <a class="dropdown-toggle well">
+                <a class="dropdown-toggle well" data-original-title="{{member.character.name}}" rel="popover" data-placement="bottom" data-content="{{member.character.bonus.description}}">
                     <img src="img/{{member.character.sprite}}"/>
                     <span><b class="caret"></b></span>
                   </a>
                 <ul class="dropdown-menu">
                   <li ng-repeat="character in unselectedCharacters()" >
-                    <a ng-click="member.character=character">{{character.name}}</a>
+                    <a ng-click="member.character=character" data-original-title="{{character.bonus.description}}" rel="tooltip" data-placement="right">{{character.name}}</a>
                   </li>
                 </ul>
               </li>
               <li class="dropdown">
-                <a class="dropdown-toggle well"><i class="icon-question-sign"></i><b class="caret"></b></a>
+                <a class="dropdown-toggle well" data-original-title="{{member.job.name}}" rel="popover" data-placement="bottom" data-content="{{member.job.role}}"><img src="img/{{member.job.sprite}}"/><b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li ng-repeat="job in unselectedJobs()">
                     <a ng-click="member.job=job"> {{job.name}}</a>
@@ -73,18 +73,19 @@
                 </ul>
               </li>
 
-              <li ng-repeat="ability in member.job.abilities">
+              <li ng-repeat="ability in member.job.abilities" class="together">
                 <span class="badge badge-info ability-level">0</span>
-                <a class="Well"><img src="img/{{ability.image}}"/></a>
+                <a class="Well" data-original-title="{{ability.name}}" rel="popover" data-placement="bottom" data-content="{{ability.description}}"><img src="img/{{ability.image}}"/></a>
               </li>
             </ul>
           </div>
         </div>
         <div class="row span4 well">
         </div>
-
-      <div id="push"></div>
-    </div>
+      </div>
+        <a data-original-title="Quality" rel="popover" data-content="Did they do a good job?  5 for Really Nice, 4 for Good Enough, 3 for Average, 2 for Somewhat OK, 1 for <b>Really</b> Bad">Q</a>
+    <div id="push"></div>
+    
     <div id="footer">
       <div class="container">
         <p class="muted credit"> Created with </p>
@@ -113,5 +114,18 @@
   <script src="js/filters.js"></script>
   <script src="js/angular-ui.js"></script>
   <script src="js/ui-bootstrap-tpls-0.2.0.js"></script>
+
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  $('body').tooltip({
+    selector: '[rel=tooltip]'
+  });
+  $('body').popover({
+    selector: '[rel=popover]',
+    trigger: 'hover',
+    html: 'true' //needed to show html of course
+  });
+  </script>
 </body>
 </html>
