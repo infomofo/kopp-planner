@@ -1,0 +1,35 @@
+[
+    {
+        "name": "E.T.",
+        "bonus":{
+            "description":"Recover 1 MP per turn",
+            "mpt":1
+        },
+        "sprite":"character_et.png"
+    },
+    {
+        "name": "Flowers",
+        "bonus":{
+            "description":"Extra 1 point on dice rolls",
+            "dice":1
+        },
+        "sprite":"character_flowers.png"
+    },
+    {
+        "name": "Grandma",
+        "bonus":{
+            "description":"+2 threat",
+            "threat":2
+        },
+        "sprite":"character_grandma.png"
+    },
+    {
+        "name": "Hipster",
+        "bonus":{
+            "description":"50% faster blacksmith crafting",
+            "crafting_speed_pct":50
+        },
+        "sprite":"character_hipster.png"
+    }
+]
+
