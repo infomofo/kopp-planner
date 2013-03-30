@@ -114,5 +114,50 @@
             "hpt": 1
         },
         "sprite": "character_woofie.png"
+    },
+    {
+        "name": "Betu",
+        "bonus": {
+            "description": "+3 attack; -50% resurrection cost",
+            "attack": 3,
+            "resurrect_discount_pct": 50
+        },
+        "sprite": "character_betu.png"
+    },
+    {
+        "name": "Gui",
+        "bonus": {
+            "description": "-5 threat; 5% mana steal",
+            "threat": -5,
+            "mp_steal_pct": 5
+        },
+        "sprite": "character_gui.png"
+    },
+    {
+        "name": "Hugo",
+        "bonus": {
+            "description": "+5 threat; +10% critical",
+            "threat": 5,
+            "critical_pct": 10
+        },
+        "sprite": "character_hugo.png"
+    },
+    {
+        "name": "Ronaldo",
+        "bonus": {
+            "description": "100% extra potion effect; 5% life steal",
+            "potion_effect_pct": 100,
+            "hp_steal_pct": 5
+        },
+        "sprite": "character_ronaldo.png"
+    },
+    {
+        "name": "Saulo",
+        "bonus": {
+            "description": "+5 initiative; +30% XP",
+            "initiative": 5,
+            "xp_pct": 30
+        },
+        "sprite": "character_saulo.png"
     }
 ]
