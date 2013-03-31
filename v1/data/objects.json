@@ -1,0 +1,36 @@
+[
+    {
+        "name": "Crown",
+        "effect": {
+            "description": "Can fight 7 monsters in battle"
+        },
+        "cost": 8,
+        "type": "permanent"
+    },
+    {
+        "name": "Holy Grail",
+        "effect": {
+            "description": "Can have 5 players at the table"
+        },
+        "cost": 12,
+        "type": "permanent"
+    },
+    {
+        "name": "Loaded Dice",
+        "effect": {
+            "description": "+1 to all dice rolls",
+            "dice":1
+        },
+        "cost": 500,
+        "type": "permanent"
+    },
+    {
+        "name": "Hourglass",
+        "effect": {
+            "description": "+1 skill duration",
+            "skill_duration": 1
+        },
+        "cost": 750,
+        "type": "permanent"
+    }
+]
