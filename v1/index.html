@@ -51,7 +51,7 @@
       <h1>Knights of Pen and Paper Party Planner</h1>
       <p>Plan builds for characters in your Knights of Pen and Paper Party. </p>
         <div class="row span6">
-          <div class="row well" ng-repeat="member in party">
+          <div class="row well" ng-repeat="member in party.members">
             <ul class="party_member">
               <span class="together">
                 <li class="dropdown">
@@ -85,7 +85,7 @@
                 </li-->
                 <li ng-repeat="ability in getJob(member).abilities" class="together">
                   <span class="badge badge-info ability-level">{{getPointsSpent(member,ability)}}</span>
-                  <a ng-click="incrementPointsSpent(member,ability)"><img ng:src="img/{{ability.image}}" data-original-title="{{ability.name}}" rel="popover" data-placement="bottom" data-content="{{ability.description}}"/></a>
+                  <a ng-click="incrementPointsSpent(member,ability)" ng-right-click="decrementPointsSpent(member,ability)"><img ng:src="img/{{ability.image}}" data-original-title="{{ability.name}}" rel="popover" data-placement="bottom" data-content="{{ability.description}}"/></a>
                 </li>
               </span>
             </ul>
@@ -112,6 +112,13 @@
           </div>
         </div>
         <div class="row span4 well">
+          <strong rel="tooltip" data-original-title="{{party.dm}}">Dungeon Master</strong>
+          <div class="btn-group" data-toggle="buttons-checkbox">
+              <button type="button" class="btn btn-primary" ng-model="party.dm" btn-radio="'Comic Store Guy'">Comic Store Guy</button>
+              <button type="button" class="btn btn-primary" ng-model="party.dm" btn-radio="'Dr. Cientist'">Dr. Cientist</button>
+              <button type="button" class="btn btn-primary" ng-model="party.dm" btn-radio="'Karate Rat'">Karate Rat</button>
+              <button type="button" class="btn btn-primary" ng-model="party.dm" btn-radio="'Yoga'">Yoga</button>
+          </div>
         </div>
       </div>
     <div id="push"></div>
@@ -137,10 +144,10 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
   -->
   <script src="lib/angular/angular.js"></script>
-  <script src="js/directives.js"></script>
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>
+  <script src="js/directives.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/angular-ui.min.js"></script>
   <script src="js/ui-bootstrap-tpls-0.2.0.js"></script>

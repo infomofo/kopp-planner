@@ -1,4 +1,6 @@
-[
+{
+    "dm":"Comic Store Guy",
+    "members":[
     {
         "character": "unselected",
         "job": "unselected",
@@ -25,3 +27,4 @@
         "abilityPoints":[0,0,0,0]
     }
 ]
+}

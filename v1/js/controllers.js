@@ -1,8 +1,7 @@
 'use strict';
 
 /* Controllers */
-var MAX_LV = 30;
-var MIN_LV = 0;
+var MIN_ABILITY_POINTS = 0;
 
 function PartyController($scope, $http, $location) {
  $http.get('data/characters.json').success(function(data) {
@@ -17,11 +16,15 @@ function PartyController($scope, $http, $location) {
     $scope.party = data;
   });
 
+  $http.get('data/objects.json').success(function(data) {
+    $scope.objects = data;
+  });
+
   $scope.unselectedCharacters = function() {
     var unselectedChars = [];
     angular.forEach($scope.characters, function(character) {
       var isSelected = false;
-      angular.forEach($scope.party, function(member) {
+      angular.forEach($scope.party.members, function(member) {
         if (member.character == character.name)
           isSelected = true;
       });
@@ -37,7 +40,7 @@ function PartyController($scope, $http, $location) {
     var unselectedJobArray = [];
     angular.forEach($scope.jobs, function(job) {
       var isSelected = false;
-      angular.forEach($scope.party, function(member) {
+      angular.forEach($scope.party.members, function(member) {
         if (member.job == job.name)
           isSelected = true;
       });
@@ -169,15 +172,20 @@ function PartyController($scope, $http, $location) {
   $scope.incrementPointsSpent = function(member,ability) {
     var job = $scope.getJob(member);
     var indexOfAbility = job.abilities.indexOf(ability);
-    console.log("incrementing points spent by " + member.character + " in " + ability.name + ": " + member.abilityPoints[indexOfAbility]);
     return member.abilityPoints[indexOfAbility] ++;
+  }
+
+  $scope.decrementPointsSpent = function(member,ability) {
+    var job = $scope.getJob(member);
+    var indexOfAbility = job.abilities.indexOf(ability);
+    if (member.abilityPoints[indexOfAbility] > MIN_ABILITY_POINTS)
+      member.abilityPoints[indexOfAbility] --;
   }
 
   $scope.getPointsSpent = function(member,ability) {
     var job = $scope.getJob(member);
     var indexOfAbility = job.abilities.indexOf(ability);
     var abilityPoints = member.abilityPoints[indexOfAbility];
-    console.log("getting points spent by " + member.character + " in " + ability.name + ": " + abilityPoints);
     return abilityPoints;
   }
 }
