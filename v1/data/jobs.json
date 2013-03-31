@@ -111,5 +111,80 @@
                 }
             }
         ]
+    },
+
+    {
+        "name": "Cleric",
+        "role": [
+            "Heal"
+        ],
+        "attack": 2,
+        "hp": 8,
+        "mp": 4,
+        "threat": 3,
+        "initiative": 1,
+        "critical_pct": 1,
+        "sprite": "class_cleric.png",
+        "step": {
+            "attack": 0.7,
+            "hp": 5,
+            "mp": 4
+        },
+        "abilities": [
+            {
+                "name": "Circle of Healing",
+                "description": "A circle of heal that raises HP of all your group members.",
+                "type": "Heal",
+                "target": "Party",
+                "image": "ability_circleofhealing.png",
+                "mp": 3,
+                "heal": 4,
+                "step": {
+                    "mp": 2,
+                    "heal": 4
+                },
+                "hpm": 0.14
+            },
+            {
+                "name": "Restoration",
+                "description": "A single heal that raises HP of your wounded target.",
+                "type": "Heal",
+                "target": "Party Member",
+                "image": "ability_restoration.png",
+                "mp": 4,
+                "heal": 15,
+                "step": {
+                    "mp": 2,
+                    "heal": 10
+                }
+            },
+            {
+                "name": "Smite",
+                "description": "Smite your target dealing damage and healing yourself.",
+                "type": ["Heal","Damage"],
+                "target": ["Target","Caster"],
+                "image": "ability_smite.png",
+                "mp": 2,
+                "heal": 6,
+                "step": {
+                    "mp": 1,
+                    "heal": 3,
+                    "damage": 3
+                }
+            },
+            {
+                "name": "Weakening",
+                "description": "Weakens your target and two adjacent foes by reducing their attack for 2 turns.",
+                "type": "Debuff",
+                "target": "Target",
+                "image": "ability_weakening.png",
+                "mp": 2,
+                "attack": -2,
+                "step": {
+                    "mp": 2,
+                    "attack": -3
+                }
+            }
+        ]
     }
 ]
