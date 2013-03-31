@@ -57,7 +57,7 @@
               <span class="together">
                 <li class="dropdown">
                   <a class="dropdown-toggle">
-                      <img src="img/{{member.character.sprite}}" data-original-title="{{member.character.name}}" rel="popover" data-placement="right" data-content="{{member.character.bonus.description}}"/>
+                      <img ng:src="img/{{member.character.sprite}}" data-original-title="{{member.character.name}}" rel="popover" data-placement="right" data-content="{{member.character.bonus.description}}"/>
                       <span><b class="caret"></b></span>
                     </a>
                   <ul class="dropdown-menu">
@@ -67,7 +67,7 @@
                   </ul>
                 </li>
                 <li class="dropdown">
-                  <a class="dropdown-toggle"><img src="img/{{member.job.sprite}}" data-original-title="{{member.job.name}}" rel="popover" data-placement="right" data-content="{{member.job.role}}"/><b class="caret"></b></a>
+                  <a class="dropdown-toggle"><img ng:src="img/{{member.job.sprite}}" data-original-title="{{member.job.name}}" rel="popover" data-placement="right" data-content="{{member.job.role}}"/><b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li ng-repeat="job in unselectedJobs()">
                       <a ng-click="member.job=job"> {{job.name}}</a>
@@ -81,7 +81,7 @@
                 </li-->
                 <li ng-repeat="ability in member.job.abilities" class="together">
                   <span class="badge badge-info ability-level">0</span>
-                  <a><img src="img/{{ability.image}}" data-original-title="{{ability.name}}" rel="popover" data-placement="bottom" data-content="{{ability.description}}"/></a>
+                  <a><img ng:src="img/{{ability.image}}" data-original-title="{{ability.name}}" rel="popover" data-placement="bottom" data-content="{{ability.description}}"/></a>
                 </li>
               </span>
             </ul>
@@ -108,7 +108,6 @@
         <div class="row span4 well">
         </div>
       </div>
-        <a data-original-title="Quality" rel="popover" data-content="Did they do a good job?  5 for Really Nice, 4 for Good Enough, 3 for Average, 2 for Somewhat OK, 1 for <b>Really</b> Bad">Q</a>
     <div id="push"></div>
     
     <div id="footer">

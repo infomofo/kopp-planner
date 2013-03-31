@@ -51,7 +51,9 @@ function PartyController($scope, $http, $location) {
 
   $scope.computeAttack = function(member) {
     var attack = member.job.attack;
-    attack += member.character.bonus.attack;
+    if (member.character.hasOwnProperty("bonus"))
+      if(member.character.bonus.hasOwnProperty("attack"))
+        attack += member.character.bonus.attack;
     return attack;
   }
 }
