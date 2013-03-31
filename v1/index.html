@@ -50,7 +50,7 @@
     <div class="container wrap">
 
       <h1>Knights of Pen and Paper Party Planner</h1>
-      <p>Plan builds for characters in your Knights of Pen and Paper Party.</p>
+      <p>Plan builds for characters in your Knights of Pen and Paper Party. </p>
         <div class="row span6">
           <div class="row well" ng-repeat="member in party">
             <ul class="party_member">
@@ -93,14 +93,16 @@
                 <th><a rel="tooltip" data-placement="top" data-original-title="Increases your likelihood of being attacked by enemies">Threat</a></th>
                 <th><a rel="tooltip" data-placement="top" data-original-title="Increases the likelihood of acting first in combat">Initiative</a></th>
                 <th><a rel="tooltip" data-placement="top" data-original-title="Increases the likelihood of dealing additional damage in an attack or ability">Critical</a></th>
+                <th class="hidden_stat"><a class="hidden_stat" rel="tooltip" data-placement="top" data-original-title="Bonus XP">XP%</a></th>
               </thead>
               <tbody>
                 <td>{{computeAttack(member)}}</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
-                <td>0</td>
+                <td>{{computeHp(member)}}</td>
+                <td>{{computeMp(member)}}</td>
+                <td>{{computeThreat(member)}}</td>
+                <td>{{computeInitiative(member)}}</td>
+                <td>{{computeCriticalPct(member)}} %</td>
+                <td class="hidden_stat">{{computeXpPct(member)}}</td>
               </tbody>
             </table>
           </div>
