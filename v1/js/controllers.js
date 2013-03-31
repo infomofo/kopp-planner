@@ -48,4 +48,10 @@ function PartyController($scope, $http, $location) {
     });
     return unselectedJobArray;
   }
+
+  $scope.computeAttack = function(member) {
+    var attack = member.job.attack;
+    attack += member.character.bonus.attack;
+    return attack;
+  }
 }

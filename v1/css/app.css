@@ -3,12 +3,15 @@ body {
   padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
 }
 
+span.together {
+  display:inline;
+}
 
 ul.party_member  {
-  margin-top:10px;  
-  margin-bottom:10px;
-  margin-right:10px;
-  margin-left:10px;
+  margin-top:0px;  
+  margin-bottom:0px;
+  margin-right:0px;
+  margin-left:0px;
 }
 
 .party_member img {
@@ -68,7 +71,7 @@ span.ability-level {
 }
 
 /* Lastly, apply responsive CSS fixes as necessary */
-@media (max-width: 767px) {
+@media (max-width: 979px) {
   #footer {
     margin-left: -20px;
     margin-right: -20px;
@@ -79,4 +82,10 @@ span.ability-level {
   tbody {
     overflow-x: auto
   }
+
+  span.together {
+  display:block;
+  min-height: 50px;
+}
+
 }

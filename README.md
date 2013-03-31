@@ -37,3 +37,7 @@ Sources
 -------
 * [Knights of Pen and Paper Wikia](http://knightsofpenandpaper.wikia.com/wiki/Knights_of_Pen_%26_Paper_Wiki)
 * [GameFAQs: Knights of Pen and Paper](http://www.gamefaqs.com/boards/688762-knights-of-pen-and-paper)
+
+Attribution
+-----------
+<a href="http://thenounproject.com/noun/sword/#icon-No1161" target="_blank">Sword</a> designed by <a href="http://thenounproject.com/mimosa.cb" target="_blank">Christopher T. Howlett</a> from The Noun Project

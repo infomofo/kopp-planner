@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
   <link rel="stylesheet" href="css/bootstrap.css"/>
+  <link rel="stylesheet" href="css/angular-ui.min.css"/>
   <link rel="stylesheet" href="css/flat-ui.css"/>
   <link rel="stylesheet" href="css/app.css"/>
   <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -50,34 +51,58 @@
 
       <h1>Knights of Pen and Paper Party Planner</h1>
       <p>Plan builds for characters in your Knights of Pen and Paper Party.</p>
-        <div class="row span5">
+        <div class="row span6">
           <div class="row well" ng-repeat="member in party">
             <ul class="party_member">
-              <li class="dropdown">
-                <a class="dropdown-toggle well" data-original-title="{{member.character.name}}" rel="popover" data-placement="bottom" data-content="{{member.character.bonus.description}}">
-                    <img src="img/{{member.character.sprite}}"/>
-                    <span><b class="caret"></b></span>
-                  </a>
-                <ul class="dropdown-menu">
-                  <li ng-repeat="character in unselectedCharacters()" >
-                    <a ng-click="member.character=character" data-original-title="{{character.bonus.description}}" rel="tooltip" data-placement="right">{{character.name}}</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a class="dropdown-toggle well" data-original-title="{{member.job.name}}" rel="popover" data-placement="bottom" data-content="{{member.job.role}}"><img src="img/{{member.job.sprite}}"/><b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li ng-repeat="job in unselectedJobs()">
-                    <a ng-click="member.job=job"> {{job.name}}</a>
-                  </li>
-                </ul>
-              </li>
-
-              <li ng-repeat="ability in member.job.abilities" class="together">
-                <span class="badge badge-info ability-level">0</span>
-                <a class="Well" data-original-title="{{ability.name}}" rel="popover" data-placement="bottom" data-content="{{ability.description}}"><img src="img/{{ability.image}}"/></a>
-              </li>
+              <span class="together">
+                <li class="dropdown">
+                  <a class="dropdown-toggle">
+                      <img src="img/{{member.character.sprite}}" data-original-title="{{member.character.name}}" rel="popover" data-placement="right" data-content="{{member.character.bonus.description}}"/>
+                      <span><b class="caret"></b></span>
+                    </a>
+                  <ul class="dropdown-menu">
+                    <li ng-repeat="character in unselectedCharacters()" >
+                      <a ng-click="member.character=character" data-original-title="{{character.bonus.description}}" rel="tooltip" data-placement="right">{{character.name}}</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle"><img src="img/{{member.job.sprite}}" data-original-title="{{member.job.name}}" rel="popover" data-placement="right" data-content="{{member.job.role}}"/><b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li ng-repeat="job in unselectedJobs()">
+                      <a ng-click="member.job=job"> {{job.name}}</a>
+                    </li>
+                  </ul>
+                </li>
+              </span>
+              <span class="together">
+                <!--li>
+                  <a class="well" data-original-title="Attack" rel="popover" data-placement="bottom" data-content=""><img src="img/sword.svg" width="40px" height="47px"/></a>
+                </li-->
+                <li ng-repeat="ability in member.job.abilities" class="together">
+                  <span class="badge badge-info ability-level">0</span>
+                  <a><img src="img/{{ability.image}}" data-original-title="{{ability.name}}" rel="popover" data-placement="bottom" data-content="{{ability.description}}"/></a>
+                </li>
+              </span>
             </ul>
+            <table class="table table-condensed" ui-if="member.job.role">
+              <thead>
+                <th><a rel="tooltip" data-placement="top" data-original-title="Used by the basic Attack Command, and to determine damage from physical abilities">Atk</a></th>
+                <th><a rel="tooltip" data-placement="top" data-original-title="Increases your max HP">Health</a></th>
+                <th><a rel="tooltip" data-placement="top" data-original-title="Increases your max MP and increases damage and healing magic abilities by 0.14">Magic</a></th>
+                <th><a rel="tooltip" data-placement="top" data-original-title="Increases your likelihood of being attacked by enemies">Threat</a></th>
+                <th><a rel="tooltip" data-placement="top" data-original-title="Increases the likelihood of acting first in combat">Initiative</a></th>
+                <th><a rel="tooltip" data-placement="top" data-original-title="Increases the likelihood of dealing additional damage in an attack or ability">Critical</a></th>
+              </thead>
+              <tbody>
+                <td>{{computeAttack(member)}}</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+              </tbody>
+            </table>
           </div>
         </div>
         <div class="row span4 well">
@@ -112,7 +137,7 @@
   <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
-  <script src="js/angular-ui.js"></script>
+  <script src="js/angular-ui.min.js"></script>
   <script src="js/ui-bootstrap-tpls-0.2.0.js"></script>
 
   <script src="js/jquery-1.9.1.min.js"></script>
