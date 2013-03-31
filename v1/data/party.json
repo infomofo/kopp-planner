@@ -1,52 +1,22 @@
 [
     {
-        "character": {
-            "name": "unselected",
-            "sprite": "character_unselected.png"
-        },
-        "job": {
-            "name": "unselected",
-            "sprite": "character_unselected.png"
-        }
+        "character": "unselected",
+        "job": "unselected"
     },
     {
-        "character": {
-            "name": "unselected",
-            "sprite": "character_unselected.png"
-        },
-        "job": {
-            "name": "unselected",
-            "sprite": "character_unselected.png"
-        }
+        "character": "unselected",
+        "job": "unselected"
     },
     {
-        "character": {
-            "name": "unselected",
-            "sprite": "character_unselected.png"
-        },
-        "job": {
-            "name": "unselected",
-            "sprite": "character_unselected.png"
-        }
+        "character": "unselected",
+        "job": "unselected"
     },
     {
-        "character": {
-            "name": "unselected",
-            "sprite": "character_unselected.png"
-        },
-        "job": {
-            "name": "unselected",
-            "sprite": "character_unselected.png"
-        }
+        "character": "unselected",
+        "job": "unselected"
     },
     {
-        "character": {
-            "name": "unselected",
-            "sprite": "character_unselected.png"
-        },
-        "job": {
-            "name": "unselected",
-            "sprite": "character_unselected.png"
-        }
+        "character": "unselected",
+        "job": "unselected"
     }
 ]

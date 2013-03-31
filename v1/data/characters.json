@@ -1,5 +1,5 @@
-[
-    {
+{
+    "E.T.":{
         "name": "E.T.",
         "bonus": {
             "description": "Recover 1 MP per turn",
@@ -7,7 +7,7 @@
         },
         "sprite": "character_et.png"
     },
-    {
+    "Flowers": {
         "name": "Flowers",
         "bonus": {
             "description": "Extra 1 point on dice rolls",
@@ -15,7 +15,7 @@
         },
         "sprite": "character_flowers.png"
     },
-    {
+    "Grandma": {
         "name": "Grandma",
         "bonus": {
             "description": "+2 threat",
@@ -23,7 +23,7 @@
         },
         "sprite": "character_grandma.png"
     },
-    {
+    "Hipster": {
         "name": "Hipster",
         "bonus": {
             "description": "50% faster blacksmith crafting",
@@ -31,7 +31,7 @@
         },
         "sprite": "character_hipster.png"
     },
-    {
+    "Hynx": {
         "name": "Hynx",
         "bonus": {
             "description": "+1 skill duration",
@@ -39,7 +39,7 @@
         },
         "sprite": "character_hynx.png"
     },
-    {
+    "Jock": {
         "name": "Jock",
         "bonus": {
             "description": "+1 Attack",
@@ -47,7 +47,7 @@
         },
         "sprite": "character_jock.png"
     },
-    {
+    "Little Brother": {
         "name": "Little Brother",
         "bonus": {
             "description": "+1 Initiative",
@@ -55,7 +55,7 @@
         },
         "sprite": "character_littlebrother.png"
     },
-    {
+    "Mr. John": {
         "name": "Mr. John",
         "bonus": {
             "description": "+10% XP",
@@ -63,7 +63,7 @@
         },
         "sprite": "character_mrjohn.png"
     },
-    {
+    "Ms. Goldberry": {
         "name": "Ms. Goldberry",
         "bonus": {
             "description": "+3% HP, +3% MP, +2% HP steal, +2% MP steal, +2% XP",
@@ -75,7 +75,7 @@
         },
         "sprite": "character_msgoldberry.png"
     },
-    {
+    "Nerd": {
         "name": "Nerd",
         "bonus": {
             "description": "50% discount to resurrect",
@@ -83,7 +83,7 @@
         },
         "sprite": "character_nerd.png"
     },
-    {
+    "Paris": {
         "name": "Paris",
         "bonus": {
             "description": "50% discount on Blacksmith upgrades",
@@ -91,7 +91,7 @@
         },
         "sprite": "character_paris.png"
     },
-    {
+    "Pizza Guy": {
         "name": "Pizza Guy",
         "bonus": {
             "description": "50% discount to buy this player",
@@ -99,7 +99,7 @@
         },
         "sprite": "character_pizzaguy.png"
     },
-    {
+    "Rocker": {
         "name": "Rocker",
         "bonus": {
             "description": "+5 health",
@@ -107,7 +107,7 @@
         },
         "sprite": "character_rocker.png"
     },
-    {
+    "Woofie": {
         "name": "Woofie",
         "bonus": {
             "description": "Heal 1 HP per turn",
@@ -115,7 +115,7 @@
         },
         "sprite": "character_woofie.png"
     },
-    {
+    "Betu": {
         "name": "Betu",
         "bonus": {
             "description": "+3 attack; -50% resurrection cost",
@@ -124,7 +124,7 @@
         },
         "sprite": "character_betu.png"
     },
-    {
+    "Gui": {
         "name": "Gui",
         "bonus": {
             "description": "-5 threat; 5% mana steal",
@@ -133,7 +133,7 @@
         },
         "sprite": "character_gui.png"
     },
-    {
+    "Hugo": {
         "name": "Hugo",
         "bonus": {
             "description": "+5 threat; +10% critical",
@@ -142,7 +142,7 @@
         },
         "sprite": "character_hugo.png"
     },
-    {
+    "Ronaldo": {
         "name": "Ronaldo",
         "bonus": {
             "description": "100% extra potion effect; 5% life steal",
@@ -151,7 +151,7 @@
         },
         "sprite": "character_ronaldo.png"
     },
-    {
+    "Saulo": {
         "name": "Saulo",
         "bonus": {
             "description": "+5 initiative; +30% XP",
@@ -160,4 +160,4 @@
         },
         "sprite": "character_saulo.png"
     }
-]
+}

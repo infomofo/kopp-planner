@@ -1,5 +1,5 @@
-[
-    {
+{
+    "Barbarian":{
         "name": "Barbarian",
         "role": [
             "Tank",
@@ -69,7 +69,7 @@
             }
         ]
     },
-    {
+    "Bard":{
         "name": "Bard",
         "role": [
             "Heal"
@@ -146,7 +146,7 @@
         ]
     },
 
-    {
+    "Cleric":{
         "name": "Cleric",
         "role": [
             "Heal"
@@ -221,7 +221,7 @@
         ]
     },
 
-    {
+    "Paladin":{
         "name": "Paladin",
         "role": [
             "Tank"
@@ -297,4 +297,4 @@
             }
         ]
     }
-]
+}

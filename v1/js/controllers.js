@@ -22,7 +22,7 @@ function PartyController($scope, $http, $location) {
     angular.forEach($scope.characters, function(character) {
       var isSelected = false;
       angular.forEach($scope.party, function(member) {
-        if (member.character.name == character.name)
+        if (member.character == character.name)
           isSelected = true;
       });
 
@@ -38,7 +38,7 @@ function PartyController($scope, $http, $location) {
     angular.forEach($scope.jobs, function(job) {
       var isSelected = false;
       angular.forEach($scope.party, function(member) {
-        if (member.job.name == job.name)
+        if (member.job == job.name)
           isSelected = true;
       });
 
@@ -50,78 +50,109 @@ function PartyController($scope, $http, $location) {
   }
 
   $scope.computeAttack = function(member) {
-    var attack = member.job.attack;
-    if (member.character.hasOwnProperty("bonus"))
-      if(member.character.bonus.hasOwnProperty("attack"))
-        attack += member.character.bonus.attack;
+    var attack = $scope.getJob(member).attack;
+    var character = $scope.getCharacter(member)
+    if (typeof character != "undefined")
+      if (character.hasOwnProperty("bonus"))
+        if(character.bonus.hasOwnProperty("attack"))
+          attack += $scope.getCharacter(member).bonus.attack;
     return attack;
   }
 
   $scope.computeXpPct = function(member) {
     var xp_pct = 100;
-    if (member.character.hasOwnProperty("bonus"))
-      if(member.character.bonus.hasOwnProperty("xp_pct"))
-        xp_pct += member.character.bonus.xp_pct;
+    var character = $scope.getCharacter(member)
+    if (typeof character != "undefined")
+      if (character.hasOwnProperty("bonus"))
+        if(character.bonus.hasOwnProperty("xp_pct"))
+          xp_pct += $scope.getCharacter(member).bonus.xp_pct;
     return xp_pct;
   }
 
   $scope.computeHpPct = function(member) {
-    var hp_pct = 0;
-    if (member.character.hasOwnProperty("bonus"))
-      if(member.character.bonus.hasOwnProperty("hp_pct"))
-        hp_pct += member.character.bonus.hp_pct;
+    var hp_pct = 0;    var character = $scope.getCharacter(member)
+    var character = $scope.getCharacter(member)
+    if (typeof character != "undefined")
+      if (character.hasOwnProperty("bonus"))
+        if(character.bonus.hasOwnProperty("hp_pct"))
+          hp_pct += $scope.getCharacter(member).bonus.hp_pct;
     return hp_pct;
   }
 
   $scope.computeMpPct = function(member) {
     var mp_pct = 0;
-    if (member.character.hasOwnProperty("bonus"))
-      if(member.character.bonus.hasOwnProperty("mp_pct"))
-        mp_pct += member.character.bonus.mp_pct;
+    var character = $scope.getCharacter(member)
+    if (typeof character != "undefined")
+      if (character.hasOwnProperty("bonus"))
+        if(character.bonus.hasOwnProperty("mp_pct"))
+         mp_pct += $scope.getCharacter(member).bonus.mp_pct;
     return mp_pct;
   }
 
   $scope.computeHp = function(member) {
-    var hp = member.job.hp;
-    if (member.character.hasOwnProperty("bonus"))
-      if(member.character.bonus.hasOwnProperty("hp"))
-        hp += member.character.bonus.hp;
+    var hp = $scope.getJob(member).hp;
+    var character = $scope.getCharacter(member)
+    if (typeof character != "undefined")
+      if (character.hasOwnProperty("bonus"))
+        if(character.bonus.hasOwnProperty("hp"))
+        hp += $scope.getCharacter(member).bonus.hp;
     var bonus = .01 * $scope.computeHpPct(member) * hp;
     hp += bonus;
     return hp;
   }
 
   $scope.computeThreat = function(member) {
-    var threat = member.job.threat;
-    if (member.character.hasOwnProperty("bonus"))
-      if(member.character.bonus.hasOwnProperty("threat"))
-        threat += member.character.bonus.threat;
+    var threat = $scope.getJob(member).threat;
+    var character = $scope.getCharacter(member)
+    if (typeof character != "undefined")
+      if (character.hasOwnProperty("bonus"))
+        if(character.bonus.hasOwnProperty("threat"))
+        threat += $scope.getCharacter(member).bonus.threat;
     return threat;
   }
 
   $scope.computeMp = function(member) {
-    var mp = member.job.mp;
-    if (member.character.hasOwnProperty("bonus"))
-      if(member.character.bonus.hasOwnProperty("mp"))
-        mp += member.character.bonus.mp;
+    var mp = $scope.getJob(member).mp;
+    var character = $scope.getCharacter(member)
+    if (typeof character != "undefined")
+      if (character.hasOwnProperty("bonus"))
+        if(character.bonus.hasOwnProperty("mp"))
+        mp += $scope.getCharacter(member).bonus.mp;
     var bonus = .01 * $scope.computeMpPct(member) * mp;
     mp += bonus;
     return mp;
   }
 
   $scope.computeInitiative = function(member) {
-    var initiative = member.job.initiative;
-    if (member.character.hasOwnProperty("bonus"))
-      if(member.character.bonus.hasOwnProperty("initiative"))
-        initiative += member.character.bonus.initiative;
+    var initiative = $scope.getJob(member).initiative;
+    var character = $scope.getCharacter(member)
+    if (typeof character != "undefined")
+      if (character.hasOwnProperty("bonus"))
+        if(character.bonus.hasOwnProperty("initiative"))
+          initiative += $scope.getCharacter(member).bonus.initiative;
     return initiative;
   }
 
   $scope.computeCriticalPct = function(member) {
-    var critical_pct = member.job.critical_pct;
-    if (member.character.hasOwnProperty("bonus"))
-      if(member.character.bonus.hasOwnProperty("critical_pct"))
-        critical_pct += member.character.bonus.critical_pct;
+    var critical_pct = $scope.getJob(member).critical_pct;
+    var character = $scope.getCharacter(member)
+    if (typeof character != "undefined")
+      if (character.hasOwnProperty("bonus"))
+        if(character.bonus.hasOwnProperty("critical_pct"))
+        critical_pct += $scope.getCharacter(member).bonus.critical_pct;
     return critical_pct;
+  }
+
+  $scope.getJob = function(member) {
+    var job = null;
+    try{
+      return $scope.jobs[member.job];
+    } catch (err) {
+    }
+    return job;
+  }
+
+  $scope.getCharacter = function(member) {
+    return $scope.characters[member.character];
   }
 }
