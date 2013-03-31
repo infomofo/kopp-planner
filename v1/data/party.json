@@ -1,22 +1,27 @@
 [
     {
         "character": "unselected",
-        "job": "unselected"
+        "job": "unselected",
+        "abilityPoints":[0,0,0,0]
     },
     {
         "character": "unselected",
-        "job": "unselected"
+        "job": "unselected",
+        "abilityPoints":[0,0,0,0]
     },
     {
         "character": "unselected",
-        "job": "unselected"
+        "job": "unselected",
+        "abilityPoints":[0,0,0,0]
     },
     {
         "character": "unselected",
-        "job": "unselected"
+        "job": "unselected",
+        "abilityPoints":[0,0,0,0]
     },
     {
         "character": "unselected",
-        "job": "unselected"
+        "job": "unselected",
+        "abilityPoints":[0,0,0,0]
     }
 ]

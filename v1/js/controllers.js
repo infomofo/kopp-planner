@@ -143,6 +143,16 @@ function PartyController($scope, $http, $location) {
     return critical_pct;
   }
 
+  $scope.computeDurationBonus = function(member) {
+    var durationBonus = 0;
+    var character = $scope.getCharacter(member)
+    if (typeof character != "undefined")
+      if (character.hasOwnProperty("bonus"))
+        if(character.bonus.hasOwnProperty("duration"))
+        durationBonus += $scope.getCharacter(member).bonus.duration;
+    return durationBonus;
+  }
+
   $scope.getJob = function(member) {
     var job = null;
     try{
@@ -154,5 +164,20 @@ function PartyController($scope, $http, $location) {
 
   $scope.getCharacter = function(member) {
     return $scope.characters[member.character];
+  }
+
+  $scope.incrementPointsSpent = function(member,ability) {
+    var job = $scope.getJob(member);
+    var indexOfAbility = job.abilities.indexOf(ability);
+    console.log("incrementing points spent by " + member.character + " in " + ability.name + ": " + member.abilityPoints[indexOfAbility]);
+    return member.abilityPoints[indexOfAbility] ++;
+  }
+
+  $scope.getPointsSpent = function(member,ability) {
+    var job = $scope.getJob(member);
+    var indexOfAbility = job.abilities.indexOf(ability);
+    var abilityPoints = member.abilityPoints[indexOfAbility];
+    console.log("getting points spent by " + member.character + " in " + ability.name + ": " + abilityPoints);
+    return abilityPoints;
   }
 }

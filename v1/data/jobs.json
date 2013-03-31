@@ -90,7 +90,7 @@
             {
                 "name": "Dissonance",
                 "description": "An unstable tone combination that deals damage to all targets.",
-                "type": "Damage",
+                "type": "Damage (magic)",
                 "target": "All Enemies",
                 "image": "ability_dissonance.png",
                 "mp": 3,
@@ -194,7 +194,7 @@
             {
                 "name": "Smite",
                 "description": "Smite your target dealing damage and healing yourself.",
-                "type": ["Heal","Damage"],
+                "type": ["Heal","Damage (magic)"],
                 "target": ["Target","Caster"],
                 "image": "ability_smite.png",
                 "mp": 2,
@@ -283,7 +283,7 @@
             {
                 "name": "Leader Strike",
                 "description": "A direct strike that deals bonus damage to attack and raises your threat.",
-                "type": "Damge",
+                "type": "Damage (physical)",
                 "target": "Target",
                 "image": "ability_leaderstrike.png",
                 "mp": 1,

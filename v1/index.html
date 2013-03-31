@@ -68,7 +68,7 @@
                 </li>
                 <li class="dropdown">
                   <a class="dropdown-toggle">
-                    <img  ui-if="getJob(member)" ng:src="img/{{getJob(member).sprite}}" data-original-title="member.job" rel="popover" data-placement="right" data-content="{{getJob(member).role}}"/>
+                    <img  ui-if="getJob(member)" ng:src="img/{{getJob(member).sprite}}" data-original-title="{{member.job}}" rel="popover" data-placement="right" data-content="{{getJob(member).role}}"/>
                     <i ui-if="!getJob(member)" class="icon-question-sign"></i>
                     <span><b class="caret"></b></span>
                   </a>
@@ -84,8 +84,8 @@
                   <a class="well" data-original-title="Attack" rel="popover" data-placement="bottom" data-content=""><img src="img/sword.svg" width="40px" height="47px"/></a>
                 </li-->
                 <li ng-repeat="ability in getJob(member).abilities" class="together">
-                  <span class="badge badge-info ability-level">0</span>
-                  <a><img ng:src="img/{{ability.image}}" data-original-title="{{ability.name}}" rel="popover" data-placement="bottom" data-content="{{ability.description}}"/></a>
+                  <span class="badge badge-info ability-level">{{getPointsSpent(member,ability)}}</span>
+                  <a ng-click="incrementPointsSpent(member,ability)"><img ng:src="img/{{ability.image}}" data-original-title="{{ability.name}}" rel="popover" data-placement="bottom" data-content="{{ability.description}}"/></a>
                 </li>
               </span>
             </ul>
