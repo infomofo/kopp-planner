@@ -113,10 +113,6 @@
         </div>
         <div class="row span5 well">
           <div class="row span5 buff">
-            <div class="span3 buff">Permanent</div>
-            <div class="span2 buff">Consumable</div>
-          </div>
-          <div class="row span5 buff">
             <strong>Dungeon Master</strong>
             <div class="btn-group" data-toggle="buttons-checkbox">
                 <button type="button" class="btn btn-primary" ng-model="party.dm" btn-radio="'Comic Store Guy'">Comic Store Guy</button>
@@ -136,6 +132,18 @@
                 <button type="button" class="btn btn-primary" ng-model="party.table" btn-radio="'Rock Table'">Rock Table</button>
             </div>
           </div> 
+          <div class="row span5 buff">
+            <div class="span3 buff">
+              <label class="checkbox" ng-repeat="object in objects|filter:{type:'permanent'}">
+                <input type="checkbox"/> {{object.name}}
+              </label>
+            </div>
+            <div class="span2 buff">
+              <label class="checkbox" ng-repeat="object in objects|filter:{type:'temporary'}">
+                <input type="checkbox"/> {{object.name}}
+              </label>
+            </div>
+          </div>
         </div>
       </div>
     <div id="push"></div>

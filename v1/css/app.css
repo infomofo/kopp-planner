@@ -11,6 +11,10 @@ body {
   margin-bottom: 0px;
 }
 
+.checkbox input {
+  opacity:.5;
+}
+
 .well { 
   padding:10px;
 }
