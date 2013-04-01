@@ -43,7 +43,7 @@
         "name": "Jock",
         "bonus": {
             "description": "+1 Attack",
-            "attack": 1
+            "atk": 1
         },
         "sprite": "character_jock.png"
     },
@@ -119,7 +119,7 @@
         "name": "Betu",
         "bonus": {
             "description": "+3 attack; -50% resurrection cost",
-            "attack": 3,
+            "atk": 3,
             "resurrect_discount_pct": 50
         },
         "sprite": "character_betu.png"

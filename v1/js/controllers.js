@@ -20,6 +20,10 @@ function PartyController($scope, $http, $location) {
     $scope.objects = data;
   });
 
+  $http.get('data/buffs.json').success(function(data) {
+    $scope.buffs = data;
+  });
+
   $scope.unselectedCharacters = function() {
     var unselectedChars = [];
     angular.forEach($scope.characters, function(character) {
@@ -53,13 +57,13 @@ function PartyController($scope, $http, $location) {
   }
 
   $scope.computeAttack = function(member) {
-    var attack = $scope.getJob(member).attack;
+    var atk = $scope.getJob(member).atk;
     var character = $scope.getCharacter(member)
     if (typeof character != "undefined")
       if (character.hasOwnProperty("bonus"))
-        if(character.bonus.hasOwnProperty("attack"))
-          attack += $scope.getCharacter(member).bonus.attack;
-    return attack;
+        if(character.bonus.hasOwnProperty("atk"))
+          atk += $scope.getCharacter(member).bonus.atk;
+    return atk;
   }
 
   $scope.computeXpPct = function(member) {
@@ -187,5 +191,15 @@ function PartyController($scope, $http, $location) {
     var indexOfAbility = job.abilities.indexOf(ability);
     var abilityPoints = member.abilityPoints[indexOfAbility];
     return abilityPoints;
+  }
+
+  $scope.getBuff = function(key) {
+    var buff_return = null;
+    angular.forEach($scope.buffs, function(buff) {
+      if (buff.key == key) {
+        buff_return = buff;
+      }
+    });
+    return buff_return;
   }
 }

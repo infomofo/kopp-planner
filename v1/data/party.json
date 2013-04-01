@@ -1,5 +1,8 @@
 {
     "dm":"Comic Store Guy",
+    "table":"Wood Table",
+    "door":"Simple Bedroom Door",
+    "rug":"Rug",
     "members":[
     {
         "character": "unselected",

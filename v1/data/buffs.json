@@ -1,0 +1,75 @@
+[
+    {
+        "key": "dm",
+        "description": "Dungeon Master",
+        "options": [
+            {
+                "name": "Dr. Cientist",
+                "effect": {
+                    "description": "+5 Magic. Regen 1 MP.",
+                    "mp": 5,
+                    "mpt": 1
+                },
+                "cost": 300
+            },
+            {
+                "name": "Comic Store Guy",
+                "effect": {
+                    "description": "+4% XP.",
+                    "xp_pct": 4
+                },
+                "cost": 0
+            },
+            {
+                "name": "Karate Rat",
+                "effect": {
+                    "description": "+1 Atk +5 Magic.",
+                    "mp": 5,
+                    "atk": 1
+                },
+                "cost": 300
+            },
+            {
+                "name": "Dungeon",
+                "effect": {
+                    "description": "-15% Travel cost. +50% travel speed.",
+                    "travel_cost_pct": -15,
+                    "travel_speed_pct": 50
+                },
+                "cost": 300
+            },
+            {
+                "name": "Yoga",
+                "effect": {
+                    "description": "+10% extra Health.",
+                    "hp_pct": 10
+                },
+                "cost": 300
+            }
+        ]
+    },
+    {
+        "key": "fleft",
+        "description": "Furniture (left)"
+    },
+    {
+        "key": "fright",
+        "description": "Furniture (right)"
+    },
+    {
+        "key": "door",
+        "description": "Door"
+    },
+    {
+        "key": "rug",
+        "description": "Rug"
+    },
+    {
+        "key": "book",
+        "description": "Book"
+    },
+    {
+        "key": "pet",
+        "description": "Pet"
+    }
+]

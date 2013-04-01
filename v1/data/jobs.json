@@ -5,7 +5,7 @@
             "Tank",
             "Damage (physical)"
         ],
-        "attack": 2,
+        "atk": 2,
         "hp": 8,
         "mp": 2,
         "threat": 3,
@@ -13,7 +13,7 @@
         "critical_pct": 1,
         "sprite": "class_barbarian.png",
         "step": {
-            "attack": 0.7,
+            "atk": 0.7,
             "hp": 6,
             "mp": 2
         },
@@ -47,10 +47,10 @@
                 "type": "Buff",
                 "target": "Caster",
                 "mp": 3,
-                "attack": 2,
+                "atk": 2,
                 "threat": 5,
                 "step": {
-                    "attack": 3,
+                    "atk": 3,
                     "threat": 5
                 }
             },
@@ -74,7 +74,7 @@
         "role": [
             "Heal"
         ],
-        "attack": 2,
+        "atk": 2,
         "hp": 8,
         "mp": 4,
         "threat": 3,
@@ -82,7 +82,7 @@
         "critical_pct": 1,
         "sprite": "class_bard.png",
         "step": {
-            "attack": 0.7,
+            "atk": 0.7,
             "hp": 5,
             "mp": 4
         },
@@ -137,10 +137,10 @@
                 "target": "Party",
                 "image": "ability_powerchord.png",
                 "mp": 3,
-                "attack": 2,
+                "atk": 2,
                 "step": {
                     "mp": 2,
-                    "attack": 2
+                    "atk": 2
                 }
             }
         ]
@@ -151,7 +151,7 @@
         "role": [
             "Heal"
         ],
-        "attack": 2,
+        "atk": 2,
         "hp": 8,
         "mp": 4,
         "threat": 3,
@@ -159,7 +159,7 @@
         "critical_pct": 1,
         "sprite": "class_cleric.png",
         "step": {
-            "attack": 0.7,
+            "atk": 0.7,
             "hp": 5,
             "mp": 4
         },
@@ -212,10 +212,10 @@
                 "target": "Target",
                 "image": "ability_weakening.png",
                 "mp": 2,
-                "attack": -2,
+                "atk": -2,
                 "step": {
                     "mp": 2,
-                    "attack": -3
+                    "atk": -3
                 }
             }
         ]
@@ -226,7 +226,7 @@
         "role": [
             "Tank"
         ],
-        "attack": 2,
+        "atk": 2,
         "hp": 9,
         "mp": 2,
         "threat": 4,
@@ -234,7 +234,7 @@
         "critical_pct": 1,
         "sprite": "class_cleric.png",
         "step": {
-            "attack": 0.7,
+            "atk": 0.7,
             "hp": 6,
             "mp": 2
         },

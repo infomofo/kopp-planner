@@ -111,14 +111,31 @@
             </table>
           </div>
         </div>
-        <div class="row span4 well">
-          <strong rel="tooltip" data-original-title="{{party.dm}}">Dungeon Master</strong>
-          <div class="btn-group" data-toggle="buttons-checkbox">
-              <button type="button" class="btn btn-primary" ng-model="party.dm" btn-radio="'Comic Store Guy'">Comic Store Guy</button>
-              <button type="button" class="btn btn-primary" ng-model="party.dm" btn-radio="'Dr. Cientist'">Dr. Cientist</button>
-              <button type="button" class="btn btn-primary" ng-model="party.dm" btn-radio="'Karate Rat'">Karate Rat</button>
-              <button type="button" class="btn btn-primary" ng-model="party.dm" btn-radio="'Yoga'">Yoga</button>
+        <div class="row span5 well">
+          <div class="row span5 buff">
+            <div class="span3 buff">Permanent</div>
+            <div class="span2 buff">Consumable</div>
           </div>
+          <div class="row span5 buff">
+            <strong>Dungeon Master</strong>
+            <div class="btn-group" data-toggle="buttons-checkbox">
+                <button type="button" class="btn btn-primary" ng-model="party.dm" btn-radio="'Comic Store Guy'">Comic Store Guy</button>
+                <button type="button" class="btn btn-primary" ng-model="party.dm" btn-radio="'Dr. Cientist'">Dr. Cientist</button>
+                <button type="button" class="btn btn-primary" ng-model="party.dm" btn-radio="'Karate Rat'">Karate Rat</button>
+                <button type="button" class="btn btn-primary" ng-model="party.dm" btn-radio="'Dungeon'">Dungeon</button>
+                <button type="button" class="btn btn-primary" ng-model="party.dm" btn-radio="'Yoga'">Yoga</button>
+            </div>
+          </div> 
+          <div class="row span5 buff">
+            <strong>Table</strong>
+            <div class="btn-group" data-toggle="buttons-checkbox">
+                <button type="button" class="btn btn-primary" ng-model="party.table" btn-radio="'Wood Table'">Wood Table</button>
+                <button type="button" class="btn btn-primary" ng-model="party.table" btn-radio="'Snooker'">Snooker</button>
+                <button type="button" class="btn btn-primary" ng-model="party.table" btn-radio="'Glass Table'">Glass Table</button>
+                <button type="button" class="btn btn-primary" ng-model="party.table" btn-radio="'Golden Table'">Golden Table</button>
+                <button type="button" class="btn btn-primary" ng-model="party.table" btn-radio="'Rock Table'">Rock Table</button>
+            </div>
+          </div> 
         </div>
       </div>
     <div id="push"></div>
