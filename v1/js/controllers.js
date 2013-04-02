@@ -301,9 +301,9 @@ function PartyController($scope, $http, $location) {
   }
 
   $scope.getAbilityTooltip = function(member,ability) {
-    var abilityPoints = $scope.getPointsSpent(member,ability);
+    var abilityPoints = $scope.getPointsSpent(member,ability) - 1;
     var tooltip = ability.type;
-    if (abilityPoints > 0) {
+    if (abilityPoints >= 0) {
       var tooltipAddition = [];
 
       var mp = ability.mp;
@@ -357,13 +357,25 @@ function PartyController($scope, $http, $location) {
       var crit_pct = ability.critical_pct;
       if (crit_pct > 0) {
         crit_pct += abilityPoints * ability.step.critical_pct;
-        tooltipAddition.push("crit%: " + crit_pct);
+        tooltipAddition.push("crit %: " + crit_pct);
       }
 
       var hp_steal_pct = ability.hp_steal_pct;
       if (hp_steal_pct > 0) {
         hp_steal_pct += abilityPoints * ability.step.hp_steal_pct;
-        tooltipAddition.push("hp steal%: " + hp_steal_pct);
+        tooltipAddition.push("hp steal %: " + hp_steal_pct);
+      } 
+
+      var mp_steal_pct = ability.mp_steal_pct;
+      if (mp_steal_pct > 0) {
+        hp_steal_pct += abilityPoints * ability.step.mp_steal_pct;
+        tooltipAddition.push("mp steal %: " + mp_steal_pct);
+      } 
+
+      var bonus_dmg_pct = ability.bonus_dmg_pct;
+      if (bonus_dmg_pct > 0) {
+        bonus_dmg_pct += abilityPoints * ability.step.bonus_dmg_pct;
+        tooltipAddition.push("bonus dmg %: " + bonus_dmg_pct);
       } 
 
       var hp_regen = ability.hp_regen;
@@ -371,6 +383,37 @@ function PartyController($scope, $http, $location) {
         hp_regen += abilityPoints * ability.step.hp_regen;
         tooltipAddition.push("hp regen: " + hp_regen);
       } 
+
+      var mp_recover = ability.mp_recover;
+      if (mp_recover > 0) {
+        mp_recover += abilityPoints * ability.step.mp_recover;
+        tooltipAddition.push("mp recovered: " + mp_recover);
+      } 
+
+      var damage_reduction_pct = ability.damage_reduction_pct;
+      if (damage_reduction_pct > 0) {
+        damage_reduction_pct += abilityPoints * ability.step.damage_reduction_pct;
+        tooltipAddition.push("dmg reduction %: " + damage_reduction_pct);
+      } 
+
+      var bleed_pct = ability.bleed_pct;
+      if (bleed_pct > 0) {
+        bleed_pct += abilityPoints * ability.step.bleed_pct;
+        tooltipAddition.push("bleed %: " + bleed_pct);
+      } 
+
+      var damage_pct = ability.damage_pct;
+      if (damage_pct > 0) {
+        damage_pct += abilityPoints * ability.step.damage_pct;
+        tooltipAddition.push("damage %: " + damage_pct);
+      } 
+
+      var magic = ability.magic;
+      if (magic > 0) {
+        magic += abilityPoints * ability.step.magic;
+        tooltipAddition.push("magic: " + magic);
+      } 
+
       tooltip += " (" + tooltipAddition.join(", ") + ")"; 
     } 
     return tooltip;

@@ -1,5 +1,5 @@
 {
-    "Barbarian":{
+    "Barbarian": {
         "name": "Barbarian",
         "role": [
             "Tank",
@@ -70,7 +70,7 @@
             }
         ]
     },
-    "Bard":{
+    "Bard": {
         "name": "Bard",
         "role": [
             "Heal"
@@ -146,8 +146,7 @@
             }
         ]
     },
-
-    "Cleric":{
+    "Cleric": {
         "name": "Cleric",
         "role": [
             "Heal"
@@ -195,8 +194,14 @@
             {
                 "name": "Smite",
                 "description": "Smite your target dealing damage and healing yourself.",
-                "type": ["Heal","Damage (magic)"],
-                "target": ["Target","Caster"],
+                "type": [
+                    "Heal",
+                    "Damage (magic)"
+                ],
+                "target": [
+                    "Target",
+                    "Caster"
+                ],
                 "image": "ability_smite.png",
                 "mp": 2,
                 "heal": 5,
@@ -222,8 +227,375 @@
             }
         ]
     },
-
-    "Paladin":{
+    "Druid": {
+        "name": "Druid",
+        "role": [
+            "Heal",
+            "Damage (physical)"
+        ],
+        "atk": 2,
+        "hp": 7,
+        "mp": 4,
+        "threat": 2,
+        "initiative": 2,
+        "critical_pct": 2,
+        "sprite": "class_druid.png",
+        "step": {
+            "atk": 1,
+            "hp": 4,
+            "mp": 4
+        },
+        "abilities": [
+            {
+                "name": "Feral Rage",
+                "description": "Feral instincts consume your body. You deal extra damage plus 10% bleed for 2 turns.",
+                "type": "Damage (physical)",
+                "target": "Target",
+                "image": "ability_feralrage.png",
+                "mp": 3,
+                "bonus_dmg_pct": 5,
+                "bleed_pct": 10,
+                "step": {
+                    "mp": 1,
+                    "bonus_dmg_pct": 5,
+                    "bleed_pct": 0
+                }
+            },
+            {
+                "name": "Regeneration",
+                "description": "Calls forth a force of nature to heal your target for the next 2 turns.",
+                "type": "Heal",
+                "target": "Party Member",
+                "image": "ability_regeneration.png",
+                "mp": 3,
+                "heal": 8,
+                "step": {
+                    "mp": 2,
+                    "heal": 6
+                }
+            },
+            {
+                "name": "Hibernate",
+                "description": "Sleep your target. When hit, the target wakes and gets critical damage.",
+                "type": "Debuff",
+                "target": "Target",
+                "image": "ability_hibernate.png",
+                "mp": 2,
+                "duration": 1,
+                "step": {
+                    "mp": 1,
+                    "duration": 1
+                }
+            },
+            {
+                "name": "Gaia's Blessing",
+                "description": "Gaia spirits possess all your group recovering MP.",
+                "type": "Buff",
+                "target": "Party",
+                "image": "ability_gaiasblessing.png",
+                "mp": 8,
+                "mp_recover": 5,
+                "step": {
+                    "mp": 4,
+                    "mp_recover": 3
+                }
+            }
+        ]
+    },
+    "Hunter": {
+        "name": "Hunter",
+        "role": [
+            "Damage"
+        ],
+        "atk": 2,
+        "hp": 7,
+        "mp": 2,
+        "threat": 2,
+        "initiative": 10,
+        "critical_pct": 3,
+        "sprite": "class_hunter.png",
+        "step": {
+            "atk": 1.3,
+            "hp": 4,
+            "mp": 2
+        },
+        "abilities": [
+            {
+                "name": "Bull's Eye",
+                "description": "The hunter focuses on its target. Raises critical hit %.",
+                "type": "Passive",
+                "image": "ability_bullseye.png",
+                "critical_pct": 5,
+                "step": {
+                    "critical_pct": 2
+                }
+            },
+            {
+                "name": "Concentrate",
+                "description": "Takes longer to aim. Raises your attack at the cost of initiative.",
+                "type": "Passive",
+                "image": "ability_concentrate.png",
+                "atk": 1,
+                "initiative": -1,
+                "step": {
+                    "atk": 2,
+                    "initiative": -0.5
+                }
+            },
+            {
+                "name": "Heart Shot",
+                "description": "Aims for the heart, damaging your target and bleeding it for 1 turn.",
+                "type": "Damage (physical)",
+                "target": "Target",
+                "image": "ability_heartshot.png",
+                "mp": 1,
+                "bleed_pct": 60,
+                "step": {
+                    "mp": 2,
+                    "bleed_pct": 10
+                }
+            },
+            {
+                "name": "Volley",
+                "description": "A great volley of arrows that deals an attack on your target plus 4 more foes.",
+                "type": "Damage (physical)",
+                "target": "Target",
+                "image": "ability_volley.png",
+                "mp": 2,
+                "damage_pct": 70,
+                "step": {
+                    "mp": 2,
+                    "damage_pct": 5
+                }
+            }
+        ]
+    },
+    "Knight": {
+        "name": "Knight",
+        "role": [
+            "Tank"
+        ],
+        "atk": 2,
+        "hp": 9,
+        "mp": 2,
+        "threat": 4,
+        "initiative": 3,
+        "critical_pct": 2,
+        "sprite": "class_knight.png",
+        "step": {
+            "atk": 0.7,
+            "hp": 6,
+            "mp": 2
+        },
+        "abilities": [
+            {
+                "name": "Combat Skill",
+                "description": "Trains every day and night raising critical hit and life steal.",
+                "type": "Passive",
+                "image": "ability_combatskill.png",
+                "critical_pct": 3,
+                "hp_steal_pct": 5,
+                "step": {
+                    "critical_pct": 2,
+                    "hp_steal_pct": 2
+                }
+            },
+            {
+                "name": "Defensive Strike",
+                "description": "Deals a critical chance attack and reduces damage taken until next turn.",
+                "type": "Damage (physical)",
+                "target": "Party Member",
+                "image": "ability_defensivestrike.png",
+                "mp": 2,
+                "critical_pct": 20,
+                "damage_reduction_pct": 50,
+                "step": {
+                    "mp": 1,
+                    "damage_reduction_pct": 0,
+                    "critical_pct": 5
+                }
+            },
+            {
+                "name": "Dragon Blood",
+                "description": "The knight attacks and steals HP.",
+                "type": "Damage (physical)",
+                "target": "Target",
+                "image": "ability_dragonblood.png",
+                "mp": 2,
+                "hp_steal_pct": 20,
+                "step": {
+                    "mp": 1,
+                    "hp_steal_pct": 20
+                }
+            },
+            {
+                "name": "Frontline",
+                "description": "The knight gets on the frontline of the battle. Raises threat.",
+                "type": "Damage (physical)",
+                "target": "Target",
+                "image": "ability_frontline.png",
+                "mp": 4,
+                "threat": 5,
+                "duration": 1,
+                "step": {
+                    "mp": 2,
+                    "threat": 5,
+                    "duration": 1
+                }
+            }
+        ]
+    },
+    "Mage": {
+        "name": "Mage",
+        "role": [
+            "Damage"
+        ],
+        "atk": 2,
+        "hp": 7,
+        "mp": 6,
+        "threat": 1,
+        "initiative": 2,
+        "critical_pct": 1,
+        "sprite": "class_mage.png",
+        "step": {
+            "atk": 0.7,
+            "hp": 4,
+            "mp": 6
+        },
+        "abilities": [
+            {
+                "name": "Fireball",
+                "description": "A big ball of fire that deals damage and burns your target.",
+                "type": "Damage (magic)",
+                "target": "Enemy",
+                "image": "ability_fireball.png",
+                "mp": 5,
+                "damage": 7,
+                "bleed_dmg": 2,
+                "duration": 2,
+                "step": {
+                    "mp": 2,
+                    "damage": 4,
+                    "bleed_dmg": 1,
+                    "duration": 0
+                }
+            },
+            {
+                "name": "Deep Freeze",
+                "description": "A cold blast that deals damage and stuns your target",
+                "type": "Damage (magic)",
+                "target": "Enemy",
+                "image": "ability_deepfreeze.png",
+                "mp": 6,
+                "damage": 3,
+                "duration": 1,
+                "step": {
+                    "mp": 1,
+                    "damage": 4,
+                    "duration": 0
+                }
+            },
+            {
+                "name": "Mana Stream",
+                "description": "The power of mana flows through your veins.",
+                "type": "Passive",
+                "image": "ability_manastream.png",
+                "mp": 6,
+                "step": {
+                    "mp": 4
+                }
+            },
+            {
+                "name": "Meteor",
+                "description": "A huge meteor that falls from the sky dealing damage to every foe in battle.",
+                "type": "Damage (magic)",
+                "target": "All Enemies",
+                "image": "ability_meteor.png",
+                "mp": 10,
+                "damage": 10,
+                "step": {
+                    "mp": 3,
+                    "damage": 2
+                }
+            }
+        ]
+    },
+    "Necromancer": {
+        "name": "Necromancer",
+        "role": [
+            "Damage (magic)"
+        ],
+        "atk": 2,
+        "hp": 7,
+        "mp": 6,
+        "threat": 1,
+        "initiative": 2,
+        "critical_pct": 1,
+        "sprite": "class_necromancer.png",
+        "step": {
+            "atk": 1,
+            "hp": 4,
+            "mp": 4
+        },
+        "abilities": [
+            {
+                "name": "Soul Pact",
+                "description": "Revive character until end of battle ",
+                "type": "Heal",
+                "target": "Party Member",
+                "image": "ability_soulpact.png",
+                "mp": 10,
+                "heal": 10,
+                "step": {
+                    "mp": 6,
+                    "heal": 10
+                }
+            },
+            {
+                "name": "Energy Drain",
+                "description": "Adds damage to attack and adds mana-drain as a percentage of every normal attack.",
+                "type": "Passive",
+                "image": "ability_energydrain.png",
+                "atk": 2,
+                "mp_steal_pct": 50,
+                "step": {
+                    "atk": 1,
+                    "mp_steal_pct": 5
+                }
+            },
+            {
+                "name": "Help from Below",
+                "description": "Target team member and neighboring allies get HP steal and critical % increase.",
+                "type": "Buff",
+                "target": "Target",
+                "image": "ability_helpfrombelow.png",
+                "mp": 10,
+                "critical_pct": 5,
+                "hp_steal_pct": 10,
+                "step": {
+                    "mp": 1,
+                    "critical_pct": 2,
+                    "hp_steal_pct": 5
+                }
+            },
+            {
+                "name": "Summon Minion",
+                "description": "The necromancer summons a minion to damage its target",
+                "type": "Damage (magic)",
+                "target": "Enemy",
+                "image": "ability_summonminion.png",
+                "mp": 10,
+                "damage": 10,
+                "duration": 3,
+                "step": {
+                    "mp": 6,
+                    "damage": 5,
+                    "duration": 0
+                }
+            }
+        ]
+    },
+    "Paladin": {
         "name": "Paladin",
         "role": [
             "Tank"
@@ -275,11 +647,11 @@
                 "target": "Caster",
                 "image": "ability_holyshield.png",
                 "mp": 3,
-                "duration":2,
-                "dmg_reduction_pct":50,
+                "duration": 2,
+                "dmg_reduction_pct": 50,
                 "step": {
                     "mp": 2,
-                    "duration":1
+                    "duration": 1
                 }
             },
             {
@@ -295,6 +667,239 @@
                     "mp": 1,
                     "damage": 4,
                     "threat": 5
+                }
+            }
+        ]
+    },
+    "Rogue": {
+        "name": "Rogue",
+        "role": [
+            "Damage"
+        ],
+        "atk": 2,
+        "hp": 7,
+        "mp": 2,
+        "threat": 3,
+        "initiative": 4,
+        "critical_pct": 3,
+        "sprite": "class_rogue.png",
+        "step": {
+            "atk": 1.3,
+            "hp": 4,
+            "mp": 2
+        },
+        "abilities": [
+            {
+                "name": "Concussion Blow",
+                "description": "Deals damage and disables your target.",
+                "type": "Damage (physical)",
+                "target": "Enemy",
+                "image": "ability_concussionblow.png",
+                "mp": 3,
+                "damage_pct": 110,
+                "duration": 1,
+                "step": {
+                    "mp": 2,
+                    "duration": 1,
+                    "damage_pct": 5
+                }
+            },
+            {
+                "name": "Double Strike",
+                "description": "Deals a double attack. Both hits have a chance to be critical.",
+                "type": "Heal",
+                "target": "Caster",
+                "image": "ability_doublestrike.png",
+                "mp": 1,
+                "damage_pct": 60,
+                "step": {
+                    "mp": 2,
+                    "damage_pct": 5
+                }
+            },
+            {
+                "name": "Poison",
+                "description": "Poisons your weapons, dealing extra damage on every hit.",
+                "type": "Passive",
+                "image": "ability_poison.png",
+                "damage": 1,
+                "step": {
+                    "damage": 1
+                }
+            },
+            {
+                "name": "Vanish",
+                "description": "Vanishes in the shadow, reducing your threat and raises your critical chance.",
+                "type": "Buff",
+                "target": "Caster",
+                "image": "ability_vanish.png",
+                "mp": 2,
+                "critical_pct": 6,
+                "threat": -2,
+                "step": {
+                    "mp": 1,
+                    "critical_pct": 6,
+                    "duration": 1,
+                    "threat": -2
+                }
+            }
+        ]
+    },
+    "Shaman": {
+        "name": "Shaman",
+        "role": [
+            "Damage"
+        ],
+        "atk": 2,
+        "hp": 7,
+        "mp": 6,
+        "threat": 1,
+        "initiative": 2,
+        "critical_pct": 1,
+        "sprite": "class_shaman.png",
+        "step": {
+            "atk": 0.7,
+            "hp": 4,
+            "mp": 6
+        },
+        "abilities": [
+            {
+                "name": "Hurricane",
+                "description": "A cyclone that deals damage on all foes in battle and again the next turn",
+                "type": "Damage (magic)",
+                "target": "All Enemies",
+                "image": "ability_hurricane.png",
+                "mp": 10,
+                "damage": 2,
+                "bleed_dmg": 2,
+                "duration": 1,
+                "step": {
+                    "mp": 4,
+                    "damage": 2,
+                    "bleed_dmg": 1,
+                    "duration": 0
+                }
+            },
+            {
+                "name": "Static Field",
+                "description": "Empowers your target with elemental magic raising your target's magic",
+                "type": "Buff",
+                "target": "Party Member",
+                "image": "ability_staticfield.png",
+                "mp": 3,
+                "magic": 10,
+                "duration": 5,
+                "step": {
+                    "mp": 2,   
+                    "magic": 10,
+                    "duration": 0
+                }
+            },
+            {
+                "name": "Thunderstorm",
+                "description": "A violent thunderstorm that deals damage on your target and its adjacent foes.",
+                "type": "Damage (magic)",
+                "target": "Enemy",
+                "image": "ability_thunderstorm.png",
+                "mp": 5,
+                "damage":4,
+                "step": {
+                    "mp": 3,
+                    "damage":3
+                }
+            },
+            {
+                "name": "Vine Trap",
+                "description": "Vines appear from under your target and trap it on the ground, dealing damage per turn",
+                "type": "Damage (magic)",
+                "target": "Enemy",
+                "image": "ability_vinetrap.png",
+                "mp": 3,
+                "damage": 3,
+                "bleed_dmg": 2,
+                "duration":1,
+                "step": {
+                    "mp": 2,
+                    "damage": 3,
+                    "bleed_dmg": 2,
+                    "duration":1
+                }
+            }
+        ]
+    },
+    "Warrior":{
+        "name": "Warrior",
+        "role": [
+            "Tank",
+            "Damage (physical)"
+        ],
+        "atk": 2,
+        "hp": 8,
+        "mp": 2,
+        "threat": 3,
+        "initiative": 3,
+        "critical_pct": 1,
+        "sprite": "class_warrior.png",
+        "step": {
+            "atk": 0.7,
+            "hp": 6,
+            "mp": 2
+        },
+        "abilities": [
+            {
+                "name": "Cleave",
+                "image": "ability_cleave.png",
+                "description": "A wild swing that hits target and adjacent enemies.",
+                "type": "Damage (physical)",
+                "target": "Enemy",
+                "mp": 3,
+                "damage_pct": 60,
+                "step": {
+                    "mp": 1,
+                    "damage_pct": 5
+                }
+            },
+            {
+                "name": "Hard Skin",
+                "image": "ability_hardskin.png",
+                "description": "Your skin is now like a rock and raises your HP",
+                "type": "Buff",
+                "target": "Caster",
+                "mp": 3,
+                "hp": 10,
+                "step": {
+                    "mp": 2,
+                    "hp": 10
+                }
+            },
+            {
+                "name": "Strike",
+                "image": "ability_strike.png",
+                "description": "Strikes a target and weakens it, reducing targets damage.",
+                "type": "Damage (physical)",
+                "target": "Enemy",
+                "mp": 2,
+                "damage_pct":130,
+                "atk": -2,
+                "duration":1,
+                "step": {
+                    "mp": 1,
+                    "damage_pct":5,
+                    "atk": -1,
+                    "duration":0
+                }
+            },
+            {
+                "name": "Taunt",
+                "image": "ability_taunt.png",
+                "description": "A powerful scream that raises your threat and HP regen.",
+                "type": "Passive",
+                "target": "Caster",
+                "threat": 1,
+                "hp_regen": 2,
+                "step": {
+                    "threat": 1,
+                    "hp_regen": 2
                 }
             }
         ]
