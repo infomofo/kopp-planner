@@ -91,6 +91,7 @@
             </ul>
             <table class="table table-condensed" ui-if="getJob(member)">
               <thead>
+                <th><a rel="tooltip" data-placement="top" data-original-title="The minimum level required to obtain the selected abilities">Level</a></th>
                 <th><a rel="tooltip" data-placement="top" data-original-title="Used by the basic Attack Command, and to determine damage from physical abilities">Atk</a></th>
                 <th><a rel="tooltip" data-placement="top" data-original-title="Increases your max HP">Health</a></th>
                 <th><a rel="tooltip" data-placement="top" data-original-title="Increases your max MP and increases damage and healing magic abilities by 0.14">Magic</a></th>
@@ -100,9 +101,10 @@
                 <th class="hidden_stat"><a class="hidden_stat" rel="tooltip" data-placement="top" data-original-title="Bonus XP">XP%</a></th>
               </thead>
               <tbody>
-                <td>{{computeAttack(member)}}</td>
-                <td>{{computeHp(member)}}</td>
-                <td>{{computeMp(member)}}</td>
+                <td>{{computeLevel(member)}}</td>
+                <td>{{computeAttack(member).toFixed(0)}}</td>
+                <td>{{computeHp(member).toFixed(0)}}</td>
+                <td>{{computeMp(member).toFixed(0)}}</td>
                 <td>{{computeThreat(member)}}</td>
                 <td>{{computeInitiative(member)}}</td>
                 <td>{{computeCriticalPct(member)}} %</td>

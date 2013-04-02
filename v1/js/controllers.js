@@ -57,12 +57,14 @@ function PartyController($scope, $http, $location) {
   }
 
   $scope.computeAttack = function(member) {
-    var atk = $scope.getJob(member).atk;
+    var job = $scope.getJob(member);
+    var atk = job.atk;
     var character = $scope.getCharacter(member)
     if (typeof character != "undefined")
       if (character.hasOwnProperty("bonus"))
         if(character.bonus.hasOwnProperty("atk"))
           atk += $scope.getCharacter(member).bonus.atk;
+    atk += ($scope.computeLevel(member) - 1) * job.step.atk;
     return atk;
   }
 
@@ -97,12 +99,14 @@ function PartyController($scope, $http, $location) {
   }
 
   $scope.computeHp = function(member) {
-    var hp = $scope.getJob(member).hp;
+    var job = $scope.getJob(member);
+    var hp = job.hp;
     var character = $scope.getCharacter(member)
     if (typeof character != "undefined")
       if (character.hasOwnProperty("bonus"))
         if(character.bonus.hasOwnProperty("hp"))
         hp += $scope.getCharacter(member).bonus.hp;
+    hp += ($scope.computeLevel(member) - 1) * job.step.hp;
     var bonus = .01 * $scope.computeHpPct(member) * hp;
     hp += bonus;
     return hp;
@@ -119,12 +123,14 @@ function PartyController($scope, $http, $location) {
   }
 
   $scope.computeMp = function(member) {
-    var mp = $scope.getJob(member).mp;
+    var job = $scope.getJob(member);
+    var mp = job.mp;
     var character = $scope.getCharacter(member)
     if (typeof character != "undefined")
       if (character.hasOwnProperty("bonus"))
         if(character.bonus.hasOwnProperty("mp"))
         mp += $scope.getCharacter(member).bonus.mp;
+    mp += ($scope.computeLevel(member) - 1) * job.step.mp;
     var bonus = .01 * $scope.computeMpPct(member) * mp;
     mp += bonus;
     return mp;
@@ -191,6 +197,14 @@ function PartyController($scope, $http, $location) {
     var indexOfAbility = job.abilities.indexOf(ability);
     var abilityPoints = member.abilityPoints[indexOfAbility];
     return abilityPoints;
+  }
+
+  $scope.computeLevel = function(member) {
+    var min_level_required = 1;
+    angular.forEach(member.abilityPoints, function(abilityPoint) {
+      min_level_required += abilityPoint;
+    });
+    return min_level_required;
   }
 
   $scope.getBuff = function(key) {
