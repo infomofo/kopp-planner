@@ -248,30 +248,34 @@
         "abilities": [
             {
                 "name": "Feral Rage",
-                "description": "Feral instincts consume your body. You deal extra damage plus 10% bleed for 2 turns.",
+                "description": "Feral instincts consume your body. You deal extra damage plus 10% bleed over time",
                 "type": "Damage (physical)",
                 "target": "Target",
                 "image": "ability_feralrage.png",
                 "mp": 3,
                 "bonus_dmg_pct": 5,
                 "bleed_pct": 10,
+                "duration":2,
                 "step": {
                     "mp": 1,
                     "bonus_dmg_pct": 5,
-                    "bleed_pct": 0
+                    "bleed_pct": 0,
+                    "duration":2
                 }
             },
             {
                 "name": "Regeneration",
-                "description": "Calls forth a force of nature to heal your target for the next 2 turns.",
+                "description": "Calls forth a force of nature to heal your target over time.",
                 "type": "Heal",
                 "target": "Party Member",
                 "image": "ability_regeneration.png",
                 "mp": 3,
                 "heal": 8,
+                "duration":2,
                 "step": {
                     "mp": 2,
-                    "heal": 6
+                    "heal": 6,
+                    "duration":2
                 }
             },
             {

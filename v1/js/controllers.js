@@ -204,7 +204,7 @@ function PartyController($scope, $http, $location) {
       var abilityPoints = member.abilityPoints[indexOfAbility] - 1;
       if (ability.type == "Passive") {
             var passiveInitiative = ability.initiative;
-            if (passiveInitiative > 0) {
+            if ((passiveInitiative > 0)||(passiveInitiative < 0)) {
               passiveInitiative += abilityPoints * ability.step.initiative;
               initiative+= passiveInitiative;
             } 
@@ -344,13 +344,19 @@ function PartyController($scope, $http, $location) {
       } 
 
       var atk = ability.atk;
-      if (atk > 0) {
+      if ((atk > 0)||(atk < 0)) {
         atk += abilityPoints * ability.step.atk;
         tooltipAddition.push("atk: " + atk);
       } 
 
+      var initiative = ability.initiative;
+      if ((initiative > 0)||(initiative < 0)) {
+        initiative += abilityPoints * ability.step.initiative;
+        tooltipAddition.push("initiative: " + initiative);
+      } 
+
       var threat = ability.threat;
-      if (threat > 0) {
+      if ((threat > 0)||(threat < 0)) {
         threat += abilityPoints * ability.step.threat;
         tooltipAddition.push("threat: " + threat);
       } 
