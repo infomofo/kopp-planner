@@ -50,6 +50,7 @@
                 "atk": 2,
                 "threat": 5,
                 "step": {
+                    "mp": 3,
                     "atk": 3,
                     "threat": 5
                 }
@@ -232,7 +233,7 @@
         "threat": 4,
         "initiative": 3,
         "critical_pct": 1,
-        "sprite": "class_cleric.png",
+        "sprite": "class_paladin.png",
         "step": {
             "atk": 0.7,
             "hp": 6,

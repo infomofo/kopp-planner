@@ -1060,7 +1060,7 @@ angular.module( 'ui.bootstrap.popover', [] )
         scope.tt_popover = val;
       });
 
-      attr.$observe( 'popover-html', function ( val ) {
+      attr.$observe( 'popoverHtml', function ( val ) {
         scope.tt_popover_html = val;
       });
 

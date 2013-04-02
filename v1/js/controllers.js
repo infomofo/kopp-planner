@@ -182,6 +182,7 @@ function PartyController($scope, $http, $location) {
   $scope.incrementPointsSpent = function(member,ability) {
     var job = $scope.getJob(member);
     var indexOfAbility = job.abilities.indexOf(ability);
+
     return member.abilityPoints[indexOfAbility] ++;
   }
 
@@ -216,4 +217,80 @@ function PartyController($scope, $http, $location) {
     });
     return buff_return;
   }
+
+  $scope.getAbilityTooltip = function(member,ability) {
+    var abilityPoints = $scope.getPointsSpent(member,ability);
+    var tooltip = ability.type;
+    if (abilityPoints > 0) {
+      var tooltipAddition = [];
+      var mp = ability.mp;
+      if (mp > 0) {
+        mp += abilityPoints * ability.step.mp;
+        tooltipAddition.push("cost: " + mp);
+      } 
+
+      var heal = ability.heal;
+      if (heal > 0) {
+        heal += abilityPoints * ability.step.heal;
+        tooltip += "heal: " + heal +" ";
+      } 
+
+      var damage = ability.damage;
+      if (damage > 0) {
+        damage += abilityPoints * ability.step.damage;
+        tooltipAddition.push("damage: " + damage)
+      } 
+
+      var atk = ability.atk;
+      if (atk > 0) {
+        atk += abilityPoints * ability.step.atk;
+        tooltipAddition.push("atk: " + atk);
+      } 
+
+      var threat = ability.threat;
+      if (threat > 0) {
+        threat += abilityPoints * ability.step.threat;
+        tooltipAddition.push("threat: " + threat);
+      } 
+
+      var crit_pct = ability.critical_pct;
+      if (crit_pct > 0) {
+        crit_pct += abilityPoints * ability.step.critical_pct;
+        tooltipAddition.push("crit%: " + crit_pct);
+      }
+
+      var hp_steal_pct = ability.hp_steal_pct;
+      if (hp_steal_pct > 0) {
+        hp_steal_pct += abilityPoints * ability.step.hp_steal_pct;
+        tooltipAddition.push("hp steal%: " + hp_steal_pct);
+      } 
+
+      var hp_regen = ability.hp_regen;
+      if (hp_regen > 0) {
+        hp_regen += abilityPoints * ability.step.hp_regen;
+        tooltipAddition.push("hp regen: " + hp_regen);
+      } 
+      tooltip += " (" + tooltipAddition.join(", ") + ")"; 
+    } 
+    return tooltip;
+  }
+
+  $scope.getAbilityTooltipObject = function(member,ability) {
+    var abilityPoints = $scope.getPointsSpent(member,ability);
+    var tooltip = ability.description + " ("+ abilityPoints+")";
+    if (abilityPoints > 0) {
+      tooltip += "<br/>";
+      var mp = ability.mp;
+      if (typeof mp != "undefined") {
+        mp += abilityPoints * ability.step.mp;
+        tooltip += "cost: " + ability.mp;
+      }
+    } 
+    var title = ability.name;
+    return {title: title, content: tooltip}
+  }
+
+  $scope.dynamicPopover = "Hello, World!";
+  $scope.dynamicPopoverText = "dynamic";
+  $scope.dynamicPopoverTitle = "Title";
 }

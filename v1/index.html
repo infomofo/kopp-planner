@@ -84,8 +84,8 @@
                   <a class="well" data-original-title="Attack" rel="popover" data-placement="bottom" data-content=""><img src="img/sword.svg" width="40px" height="47px"/></a>
                 </li-->
                 <li ng-repeat="ability in getJob(member).abilities" class="together">
-                  <span class="badge badge-info ability-level">{{getPointsSpent(member,ability)}}</span>
-                  <a ng-click="incrementPointsSpent(member,ability)" ng-right-click="decrementPointsSpent(member,ability)"><img ng:src="img/{{ability.image}}" data-original-title="{{ability.name}}" rel="popover" data-placement="bottom" data-content="{{ability.description}}"/></a>
+                  <span class="badge badge-info ability-level" >{{getPointsSpent(member,ability)}}</span>
+                  <a ng-click="incrementPointsSpent(member,ability)" ng-right-click="decrementPointsSpent(member,ability)" data-placement="bottom" data-trigger="hover" popover="{{ability.description}}" popover-html="{{getAbilityTooltip(member,ability)}}" popover-title="{{ability.name}}" popover-placement='bottom'><img ng:src="img/{{ability.image}}" /></a>
                 </li>
               </span>
             </ul>
@@ -149,7 +149,7 @@
           </div>
         </div>
       </div>
-    <div id="push"></div>
+      <div class="push"/>
     
     <div id="footer">
       <div class="container">
@@ -171,6 +171,9 @@
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
   -->
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
   <script src="lib/angular/angular.js"></script>
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>
@@ -180,16 +183,17 @@
   <script src="js/angular-ui.min.js"></script>
   <script src="js/ui-bootstrap-tpls-0.2.0.js"></script>
 
-  <script src="js/jquery-1.9.1.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+
+  <script src="js/angular-strap.min.js"></script>
   <script type="text/javascript">
   $('body').tooltip({
     selector: '[rel=tooltip]'
   });
   $('body').popover({
-    selector: '[rel=popover]',
-    trigger: 'hover',
-    html: 'true' //needed to show html of course
+     selector: '[rel=popover]',
+     trigger: 'hover',
+     placement: 'bottom',
+     html: true //needed to show html of course
   });
   </script>
 </body>

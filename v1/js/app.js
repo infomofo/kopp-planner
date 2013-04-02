@@ -2,7 +2,7 @@ angular.module('koppPlanner', [], function($locationProvider) {
   $locationProvider.html5Mode(true);
 });
 
-angular.module('koppPlanner', ['ui.bootstrap','ui']).directive('ngRightClick', function($parse) {
+angular.module('koppPlanner', ['ui.bootstrap','ui','$strap.directives']).directive('ngRightClick', function($parse) {
     return function(scope, element, attrs) {
         var fn = $parse(attrs.ngRightClick);
         element.bind('contextmenu', function(event) {
