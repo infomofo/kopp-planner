@@ -139,12 +139,12 @@
           <div class="row span6 buff">
             <strong class="pull-left">Table Items</strong>
             <div class="span2 buff">
-              <label class="checkbox" ng-repeat="object in objects|filter:{type:'permanent'}" rel="tooltip" data-placement="bottom" data-original-title="{{object.effect.description}}">
+              <label class="checkbox" ng-repeat="object in objects|filter:{type:'permanent'}" rel="tooltip" data-placement="bottom" data-original-title="{{object.effect.description}} ({{object.type}}, {{object.cost}} gold)">
                 <input type="checkbox"/> {{object.name}}
               </label>
             </div>
             <div class="span2 buff">
-              <label class="checkbox" ng-repeat="object in objects|filter:{type:'temporary'}" rel="tooltip" data-placement="bottom" data-original-title="{{object.effect.description}}">
+              <label class="checkbox" ng-repeat="object in objects|filter:{type:'temporary'}" rel="tooltip" data-placement="bottom" data-original-title="{{object.effect.description}} ({{object.type}}, {{object.cost}} gold)">
                 <input type="checkbox"/> {{object.name}}
               </label>
             </div>

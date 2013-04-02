@@ -504,9 +504,9 @@
                 "description": "The power of mana flows through your veins.",
                 "type": "Passive",
                 "image": "ability_manastream.png",
-                "mp": 6,
+                "magic": 6,
                 "step": {
-                    "mp": 4
+                    "magic": 4
                 }
             },
             {

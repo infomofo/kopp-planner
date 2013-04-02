@@ -176,9 +176,9 @@ function PartyController($scope, $http, $location) {
       var indexOfAbility = job.abilities.indexOf(ability);
       var abilityPoints = member.abilityPoints[indexOfAbility] - 1;
       if (ability.type == "Passive") {
-            var passiveMp = ability.mp;
+            var passiveMp = ability.magic;
             if (passiveMp > 0) {
-              passiveMp += abilityPoints * ability.step.mp;
+              passiveMp += abilityPoints * ability.step.magic;
               mp+= passiveMp;
             } 
       }
