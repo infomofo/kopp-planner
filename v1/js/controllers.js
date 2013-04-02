@@ -330,6 +330,18 @@ function PartyController($scope, $http, $location) {
         tooltipAddition.push("hp: " + hp);
       } 
 
+      var damage_reduction_pct = ability.damage_reduction_pct;
+      if (damage_reduction_pct > 0) {
+        damage_reduction_pct += abilityPoints * ability.step.damage_reduction_pct;
+        tooltipAddition.push("dmg reduction %: " + damage_reduction_pct);
+      } 
+
+      var duration = ability.duration;
+      if (duration > 0) {
+        duration += abilityPoints * ability.step.duration;
+        tooltipAddition.push("duration: " + duration);
+      } 
+
       var atk = ability.atk;
       if (atk > 0) {
         atk += abilityPoints * ability.step.atk;
