@@ -35,7 +35,7 @@
         "name": "Hynx",
         "bonus": {
             "description": "+1 skill duration",
-            "skill_duration": 1
+            "duration": 1
         },
         "sprite": "character_hynx.png"
     },

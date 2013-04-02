@@ -69,7 +69,7 @@ function PartyController($scope, $http, $location) {
     angular.forEach(job.abilities,function(ability) {
 
       var indexOfAbility = job.abilities.indexOf(ability);
-      var abilityPoints = member.abilityPoints[indexOfAbility];
+      var abilityPoints = member.abilityPoints[indexOfAbility] - 1;
       if (ability.type == "Passive") {
             var passiveAtk = ability.atk;
             if (passiveAtk > 0) {
@@ -124,7 +124,7 @@ function PartyController($scope, $http, $location) {
 
     angular.forEach(job.abilities,function(ability) {
       var indexOfAbility = job.abilities.indexOf(ability);
-      var abilityPoints = member.abilityPoints[indexOfAbility];
+      var abilityPoints = member.abilityPoints[indexOfAbility] - 1;
       if (ability.type == "Passive") {
             var passiveHp = ability.hp;
             if (passiveHp > 0) {
@@ -150,7 +150,7 @@ function PartyController($scope, $http, $location) {
     var job = $scope.getJob(member);
     angular.forEach(job.abilities,function(ability) {
       var indexOfAbility = job.abilities.indexOf(ability);
-      var abilityPoints = member.abilityPoints[indexOfAbility];
+      var abilityPoints = member.abilityPoints[indexOfAbility] - 1;
       if (ability.type == "Passive") {
             var passiveThreat = ability.threat;
             if (passiveThreat > 0) {
@@ -174,7 +174,7 @@ function PartyController($scope, $http, $location) {
 
     angular.forEach(job.abilities,function(ability) {
       var indexOfAbility = job.abilities.indexOf(ability);
-      var abilityPoints = member.abilityPoints[indexOfAbility];
+      var abilityPoints = member.abilityPoints[indexOfAbility] - 1;
       if (ability.type == "Passive") {
             var passiveMp = ability.mp;
             if (passiveMp > 0) {
@@ -201,7 +201,7 @@ function PartyController($scope, $http, $location) {
     var job = $scope.getJob(member);
     angular.forEach(job.abilities,function(ability) {
       var indexOfAbility = job.abilities.indexOf(ability);
-      var abilityPoints = member.abilityPoints[indexOfAbility];
+      var abilityPoints = member.abilityPoints[indexOfAbility] - 1;
       if (ability.type == "Passive") {
             var passiveInitiative = ability.initiative;
             if (passiveInitiative > 0) {
@@ -220,12 +220,12 @@ function PartyController($scope, $http, $location) {
     if (typeof character != "undefined")
       if (character.hasOwnProperty("bonus"))
         if(character.bonus.hasOwnProperty("critical_pct"))
-        critical_pct += $scope.getCharacter(member).bonus.critical_pct;
+        critical_pct += character.bonus.critical_pct;
 
     var job = $scope.getJob(member);
     angular.forEach(job.abilities,function(ability) {
       var indexOfAbility = job.abilities.indexOf(ability);
-      var abilityPoints = member.abilityPoints[indexOfAbility];
+      var abilityPoints = member.abilityPoints[indexOfAbility] - 1;
       if (ability.type == "Passive") {
             var passiveCriticalPct = ability.critical_pct;
             if (passiveCriticalPct > 0) {
@@ -244,7 +244,7 @@ function PartyController($scope, $http, $location) {
     if (typeof character != "undefined")
       if (character.hasOwnProperty("bonus"))
         if(character.bonus.hasOwnProperty("duration"))
-        durationBonus += $scope.getCharacter(member).bonus.duration;
+        durationBonus += character.bonus.duration;
     return durationBonus;
   }
 
@@ -338,6 +338,7 @@ function PartyController($scope, $http, $location) {
 
       var duration = ability.duration;
       if (duration > 0) {
+        duration += $scope.computeDurationBonus(member);
         duration += abilityPoints * ability.step.duration;
         tooltipAddition.push("duration: " + duration);
       } 

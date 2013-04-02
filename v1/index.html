@@ -99,6 +99,7 @@
                 <th><a rel="tooltip" data-placement="top" data-original-title="Increases the likelihood of acting first in combat">Initiative</a></th>
                 <th><a rel="tooltip" data-placement="top" data-original-title="Increases the likelihood of dealing additional damage in an attack or ability">Critical</a></th>
                 <th class="hidden_stat"><a class="hidden_stat" rel="tooltip" data-placement="top" data-original-title="Bonus XP">XP%</a></th>
+                <th class="hidden_stat"><a class="hidden_stat" rel="tooltip" data-placement="top" data-original-title="Duration Bonus">Duration</a></th>
               </thead>
               <tbody>
                 <td>{{computeLevel(member)}}</td>
@@ -109,6 +110,7 @@
                 <td>{{computeInitiative(member)}}</td>
                 <td>{{computeCriticalPct(member)}} %</td>
                 <td class="hidden_stat">{{computeXpPct(member)}}</td>
+                <td class="hidden_stat">{{computeDurationBonus(member)}}</td>
               </tbody>
             </table>
           </div>
