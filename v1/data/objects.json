@@ -28,9 +28,89 @@
         "name": "Hourglass",
         "effect": {
             "description": "+1 skill duration",
-            "skill_duration": 1
+            "duration": 1
         },
         "cost": 750,
         "type": "permanent"
+    },
+    {
+        "name": "Cake",
+        "effect": {
+            "description": "+10 Health +1% extra HP",
+            "hp":10,
+            "hp_pct":1
+        },
+        "cost": 60,
+        "minutes":15,
+        "type": "temporary"
+    },
+    {
+        "name": "Cookies",
+        "effect": {
+            "description": "+10 Magic +1% extra MP",
+            "mp":10,
+            "mp_pct":1
+        },
+        "cost": 60,
+        "minutes":15,
+        "type": "temporary"
+    },
+    {
+        "name": "Chips",
+        "effect": {
+            "description": "+2% life steal",
+            "hp_steal_pct":2
+        },
+        "cost": 60,
+        "minutes":15,
+        "type": "temporary"
+    },
+    {
+        "name": "Pizza",
+        "effect": {
+            "description": "+2% Crit",
+            "critical_pct":2
+        },
+        "cost": 60,
+        "minutes":15,
+        "type": "temporary"
+    },
+    {
+        "name": "Soda Can",
+        "effect": {
+            "description": "+15% extra potion effect"
+        },
+        "cost": 30,
+        "minutes":15,
+        "type": "temporary"
+    },
+    {
+        "name": "Milk",
+        "effect": {
+            "description": "+2% Crit",
+            "critical_pct":2
+        },
+        "cost": 60,
+        "minutes":15,
+        "type": "temporary"
+    },
+    {
+        "name": "Coffee",
+        "effect": {
+            "description": "+10 Initiative",
+            "initiative":10
+        },
+        "cost": 60,
+        "minutes":15,
+        "type": "temporary"
+    },
+    {
+        "name": "Soda Bottle",
+        "effect": {
+            "description": "+35% extra potion effect"
+        },
+        "cost": 90,
+        "minutes":15,
+        "type": "temporary"
     }
 ]
