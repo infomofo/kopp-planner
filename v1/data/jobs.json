@@ -199,10 +199,11 @@
                 "target": ["Target","Caster"],
                 "image": "ability_smite.png",
                 "mp": 2,
-                "heal": 6,
+                "heal": 5,
+                "damage": 6,
                 "step": {
                     "mp": 1,
-                    "heal": 3,
+                    "heal": 4,
                     "damage": 3
                 }
             },

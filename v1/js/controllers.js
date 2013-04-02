@@ -65,6 +65,20 @@ function PartyController($scope, $http, $location) {
         if(character.bonus.hasOwnProperty("atk"))
           atk += $scope.getCharacter(member).bonus.atk;
     atk += ($scope.computeLevel(member) - 1) * job.step.atk;
+
+    angular.forEach(job.abilities,function(ability) {
+
+      var indexOfAbility = job.abilities.indexOf(ability);
+      var abilityPoints = member.abilityPoints[indexOfAbility];
+      if (ability.type == "Passive") {
+            var passiveAtk = ability.atk;
+            if (passiveAtk > 0) {
+              passiveAtk += abilityPoints * ability.step.atk;
+              atk+= passiveAtk;
+            } 
+      }
+    });
+
     return atk;
   }
 
@@ -107,6 +121,19 @@ function PartyController($scope, $http, $location) {
         if(character.bonus.hasOwnProperty("hp"))
         hp += $scope.getCharacter(member).bonus.hp;
     hp += ($scope.computeLevel(member) - 1) * job.step.hp;
+
+    angular.forEach(job.abilities,function(ability) {
+      var indexOfAbility = job.abilities.indexOf(ability);
+      var abilityPoints = member.abilityPoints[indexOfAbility];
+      if (ability.type == "Passive") {
+            var passiveHp = ability.hp;
+            if (passiveHp > 0) {
+              passiveHp += abilityPoints * ability.step.hp;
+              hp+= passiveHp;
+            } 
+      }
+    });
+
     var bonus = .01 * $scope.computeHpPct(member) * hp;
     hp += bonus;
     return hp;
@@ -119,6 +146,19 @@ function PartyController($scope, $http, $location) {
       if (character.hasOwnProperty("bonus"))
         if(character.bonus.hasOwnProperty("threat"))
         threat += $scope.getCharacter(member).bonus.threat;
+
+    var job = $scope.getJob(member);
+    angular.forEach(job.abilities,function(ability) {
+      var indexOfAbility = job.abilities.indexOf(ability);
+      var abilityPoints = member.abilityPoints[indexOfAbility];
+      if (ability.type == "Passive") {
+            var passiveThreat = ability.threat;
+            if (passiveThreat > 0) {
+              passiveThreat += abilityPoints * ability.step.threat;
+              threat+= passiveThreat;
+            } 
+      }
+    });
     return threat;
   }
 
@@ -131,18 +171,46 @@ function PartyController($scope, $http, $location) {
         if(character.bonus.hasOwnProperty("mp"))
         mp += $scope.getCharacter(member).bonus.mp;
     mp += ($scope.computeLevel(member) - 1) * job.step.mp;
+
+    angular.forEach(job.abilities,function(ability) {
+      var indexOfAbility = job.abilities.indexOf(ability);
+      var abilityPoints = member.abilityPoints[indexOfAbility];
+      if (ability.type == "Passive") {
+            var passiveMp = ability.mp;
+            if (passiveMp > 0) {
+              passiveMp += abilityPoints * ability.step.mp;
+              mp+= passiveMp;
+            } 
+      }
+    });
+
     var bonus = .01 * $scope.computeMpPct(member) * mp;
     mp += bonus;
     return mp;
   }
 
   $scope.computeInitiative = function(member) {
+    var job = $scope.getJob(member);
     var initiative = $scope.getJob(member).initiative;
     var character = $scope.getCharacter(member)
     if (typeof character != "undefined")
       if (character.hasOwnProperty("bonus"))
         if(character.bonus.hasOwnProperty("initiative"))
           initiative += $scope.getCharacter(member).bonus.initiative;
+
+    var job = $scope.getJob(member);
+    angular.forEach(job.abilities,function(ability) {
+      var indexOfAbility = job.abilities.indexOf(ability);
+      var abilityPoints = member.abilityPoints[indexOfAbility];
+      if (ability.type == "Passive") {
+            var passiveInitiative = ability.initiative;
+            if (passiveInitiative > 0) {
+              passiveInitiative += abilityPoints * ability.step.initiative;
+              initiative+= passiveInitiative;
+            } 
+      }
+    });
+
     return initiative;
   }
 
@@ -153,6 +221,20 @@ function PartyController($scope, $http, $location) {
       if (character.hasOwnProperty("bonus"))
         if(character.bonus.hasOwnProperty("critical_pct"))
         critical_pct += $scope.getCharacter(member).bonus.critical_pct;
+
+    var job = $scope.getJob(member);
+    angular.forEach(job.abilities,function(ability) {
+      var indexOfAbility = job.abilities.indexOf(ability);
+      var abilityPoints = member.abilityPoints[indexOfAbility];
+      if (ability.type == "Passive") {
+            var passiveCriticalPct = ability.critical_pct;
+            if (passiveCriticalPct > 0) {
+              passiveCriticalPct += abilityPoints * ability.step.critical_pct;
+              critical_pct+= passiveCriticalPct;
+            } 
+      }
+    });
+
     return critical_pct;
   }
 
@@ -223,22 +305,29 @@ function PartyController($scope, $http, $location) {
     var tooltip = ability.type;
     if (abilityPoints > 0) {
       var tooltipAddition = [];
+
       var mp = ability.mp;
       if (mp > 0) {
         mp += abilityPoints * ability.step.mp;
         tooltipAddition.push("cost: " + mp);
       } 
 
-      var heal = ability.heal;
-      if (heal > 0) {
-        heal += abilityPoints * ability.step.heal;
-        tooltip += "heal: " + heal +" ";
-      } 
-
       var damage = ability.damage;
       if (damage > 0) {
         damage += abilityPoints * ability.step.damage;
-        tooltipAddition.push("damage: " + damage)
+        tooltipAddition.push("damage: " + damage);
+      } 
+
+      var heal = ability.heal;
+      if (heal > 0) {
+        heal += abilityPoints * ability.step.heal;
+        tooltipAddition.push("heal: " + heal);
+      } 
+
+      var hp = ability.hp;
+      if (hp > 0) {
+        hp += abilityPoints * ability.step.hp;
+        tooltipAddition.push("hp: " + hp);
       } 
 
       var atk = ability.atk;
@@ -289,8 +378,4 @@ function PartyController($scope, $http, $location) {
     var title = ability.name;
     return {title: title, content: tooltip}
   }
-
-  $scope.dynamicPopover = "Hello, World!";
-  $scope.dynamicPopoverText = "dynamic";
-  $scope.dynamicPopoverTitle = "Title";
 }
