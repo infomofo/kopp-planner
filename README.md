@@ -3,6 +3,7 @@ Knights of Pen and Paper Party Planner
 
 What is Knights of Pen and Paper?
 ------------------------------------------------
+A great game from Behold Studios! http://beholdstudios.com.br/knights-of-pen-paper/
 
 How to use Knights of Pen and Paper Party Planner
 -----------------------------
@@ -41,7 +42,4 @@ Sources
 -------
 * [Knights of Pen and Paper Wikia](http://knightsofpenandpaper.wikia.com/wiki/Knights_of_Pen_%26_Paper_Wiki)
 * [GameFAQs: Knights of Pen and Paper](http://www.gamefaqs.com/boards/688762-knights-of-pen-and-paper)
-
-Attribution
------------
-<a href="http://thenounproject.com/noun/sword/#icon-No1161" target="_blank">Sword</a> designed by <a href="http://thenounproject.com/mimosa.cb" target="_blank">Christopher T. Howlett</a> from The Noun Project
+* [Behold Studios](http://beholdstudios.com.br/knights-of-pen-paper/)
