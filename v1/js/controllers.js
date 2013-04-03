@@ -12,10 +12,6 @@ function PartyController($scope, $http, $location) {
     $scope.jobs = data;
   });
 
-  $http.get('data/party.json').success(function(data) {
-    $scope.party = data;
-  });
-
   $http.get('data/objects.json').success(function(data) {
     $scope.objects = data;
   });
@@ -23,6 +19,23 @@ function PartyController($scope, $http, $location) {
   $http.get('data/buffs.json').success(function(data) {
     $scope.buffs = data;
   });
+
+  $scope.validateParty = function(partyJson) {
+    var party;
+    try {
+      $scope.party = angular.fromJson(partyJson);
+      if ($scope.party.permanentObjects["Crown"] < 0) {
+        throw exception;
+      }
+    } catch (e) {
+      $http.get('data/party.json').success(function(data) {
+         $scope.party = data;
+         $scope.updateUrl 
+      });
+    }
+  }
+
+  $scope.validateParty($location.search()['party']);
 
   $scope.unselectedCharacters = function() {
     var unselectedChars = [];
@@ -450,4 +463,9 @@ function PartyController($scope, $http, $location) {
     var object = $scope.objects[objectKey];
     return object.effect.description + " (" +object.type + ", " + object.cost + " gold)";
   }
+
+  $scope.$watch('party',function() {
+    if ($scope.party != null)
+      $location.search({"party":angular.toJson($scope.party)});
+  }, true);
 }
