@@ -92,6 +92,35 @@ function PartyController($scope, $http, $location) {
       }
     });
 
+    angular.forEach(_.keys($scope.party.buffs), function(buffKey) {
+      var buff = $scope.buffs[buffKey];
+      var buffValue = $scope.party.buffs[buffKey];
+      var buffOption = buff.options[buffValue];
+      if (typeof buffOption != "undefined")
+        if (buffOption.hasOwnProperty("effect"))
+          if(buffOption.effect.hasOwnProperty("atk"))
+            atk += buffOption.effect.atk;
+    });
+    angular.forEach(_.keys($scope.party.permanentObjects), function(objectKey) {
+      var objectValue = $scope.party.permanentObjects[objectKey];
+      if (objectValue > 0) {
+        var object = $scope.objects[objectKey];
+        if (typeof object != "undefined")
+          if (object.hasOwnProperty("effect"))
+            if(object.effect.hasOwnProperty("atk"))
+              atk += object.effect.atk;
+      }
+    });
+    angular.forEach(_.keys($scope.party.temporaryObjects), function(objectKey) {
+      var objectValue = $scope.party.temporaryObjects[objectKey];
+      if (objectValue > 0) {
+        var object = $scope.objects[objectKey];
+        if (typeof object != "undefined")
+          if (object.hasOwnProperty("effect"))
+            if(object.effect.hasOwnProperty("atk"))
+              atk += object.effect.atk;
+      }
+    });
     return atk;
   }
 
@@ -102,6 +131,37 @@ function PartyController($scope, $http, $location) {
       if (character.hasOwnProperty("bonus"))
         if(character.bonus.hasOwnProperty("xp_pct"))
           xp_pct += $scope.getCharacter(member).bonus.xp_pct;
+
+    angular.forEach(_.keys($scope.party.buffs), function(buffKey) {
+      var buff = $scope.buffs[buffKey];
+      var buffValue = $scope.party.buffs[buffKey];
+      var buffOption = buff.options[buffValue];
+      if (typeof buffOption != "undefined")
+        if (buffOption.hasOwnProperty("effect"))
+          if(buffOption.effect.hasOwnProperty("xp_pct"))
+            xp_pct += buffOption.effect.xp_pct;
+    });
+    angular.forEach(_.keys($scope.party.permanentObjects), function(objectKey) {
+      var objectValue = $scope.party.permanentObjects[objectKey];
+      if (objectValue > 0) {
+        var object = $scope.objects[objectKey];
+        if (typeof object != "undefined")
+          if (object.hasOwnProperty("effect"))
+            if(object.effect.hasOwnProperty("xp_pct"))
+              xp_pct += object.effect.xp_pct;
+      }
+    });
+    angular.forEach(_.keys($scope.party.temporaryObjects), function(objectKey) {
+      var objectValue = $scope.party.temporaryObjects[objectKey];
+      if (objectValue > 0) {
+        var object = $scope.objects[objectKey];
+        if (typeof object != "undefined")
+          if (object.hasOwnProperty("effect"))
+            if(object.effect.hasOwnProperty("xp_pct"))
+              xp_pct += object.effect.xp_pct;
+      }
+    });
+
     return xp_pct;
   }
 
@@ -112,6 +172,38 @@ function PartyController($scope, $http, $location) {
       if (character.hasOwnProperty("bonus"))
         if(character.bonus.hasOwnProperty("hp_pct"))
           hp_pct += $scope.getCharacter(member).bonus.hp_pct;
+
+
+    angular.forEach(_.keys($scope.party.buffs), function(buffKey) {
+      var buff = $scope.buffs[buffKey];
+      var buffValue = $scope.party.buffs[buffKey];
+      var buffOption = buff.options[buffValue];
+      if (typeof buffOption != "undefined")
+        if (buffOption.hasOwnProperty("effect"))
+          if(buffOption.effect.hasOwnProperty("hp_pct"))
+            hp_pct += buffOption.effect.hp_pct;
+    });
+    angular.forEach(_.keys($scope.party.permanentObjects), function(objectKey) {
+      var objectValue = $scope.party.permanentObjects[objectKey];
+      if (objectValue > 0) {
+        var object = $scope.objects[objectKey];
+        if (typeof object != "undefined")
+          if (object.hasOwnProperty("effect"))
+            if(object.effect.hasOwnProperty("hp_pct"))
+              hp_pct += object.effect.hp_pct;
+      }
+    });
+    angular.forEach(_.keys($scope.party.temporaryObjects), function(objectKey) {
+      var objectValue = $scope.party.temporaryObjects[objectKey];
+      if (objectValue > 0) {
+        var object = $scope.objects[objectKey];
+        if (typeof object != "undefined")
+          if (object.hasOwnProperty("effect"))
+            if(object.effect.hasOwnProperty("hp_pct"))
+              hp_pct += object.effect.hp_pct;
+      }
+    });
+
     return hp_pct;
   }
 
@@ -122,6 +214,36 @@ function PartyController($scope, $http, $location) {
       if (character.hasOwnProperty("bonus"))
         if(character.bonus.hasOwnProperty("mp_pct"))
          mp_pct += $scope.getCharacter(member).bonus.mp_pct;
+
+    angular.forEach(_.keys($scope.party.buffs), function(buffKey) {
+      var buff = $scope.buffs[buffKey];
+      var buffValue = $scope.party.buffs[buffKey];
+      var buffOption = buff.options[buffValue];
+      if (typeof buffOption != "undefined")
+        if (buffOption.hasOwnProperty("effect"))
+          if(buffOption.effect.hasOwnProperty("mp_pct"))
+            mp_pct += buffOption.effect.mp_pct;
+    });
+    angular.forEach(_.keys($scope.party.permanentObjects), function(objectKey) {
+      var objectValue = $scope.party.permanentObjects[objectKey];
+      if (objectValue > 0) {
+        var object = $scope.objects[objectKey];
+        if (typeof object != "undefined")
+          if (object.hasOwnProperty("effect"))
+            if(object.effect.hasOwnProperty("mp_pct"))
+              mp_pct += object.effect.mp_pct;
+      }
+    });
+    angular.forEach(_.keys($scope.party.temporaryObjects), function(objectKey) {
+      var objectValue = $scope.party.temporaryObjects[objectKey];
+      if (objectValue > 0) {
+        var object = $scope.objects[objectKey];
+        if (typeof object != "undefined")
+          if (object.hasOwnProperty("effect"))
+            if(object.effect.hasOwnProperty("mp_pct"))
+              mp_pct += object.effect.mp_pct;
+      }
+    });
     return mp_pct;
   }
 
@@ -144,6 +266,36 @@ function PartyController($scope, $http, $location) {
               passiveHp += abilityPoints * ability.step.hp;
               hp+= passiveHp;
             } 
+      }
+    });
+
+    angular.forEach(_.keys($scope.party.buffs), function(buffKey) {
+      var buff = $scope.buffs[buffKey];
+      var buffValue = $scope.party.buffs[buffKey];
+      var buffOption = buff.options[buffValue];
+      if (typeof buffOption != "undefined")
+        if (buffOption.hasOwnProperty("effect"))
+          if(buffOption.effect.hasOwnProperty("hp"))
+            hp += buffOption.effect.hp;
+    });
+    angular.forEach(_.keys($scope.party.permanentObjects), function(objectKey) {
+      var objectValue = $scope.party.permanentObjects[objectKey];
+      if (objectValue > 0) {
+        var object = $scope.objects[objectKey];
+        if (typeof object != "undefined")
+          if (object.hasOwnProperty("effect"))
+            if(object.effect.hasOwnProperty("hp"))
+              hp += object.effect.hp;
+      }
+    });
+    angular.forEach(_.keys($scope.party.temporaryObjects), function(objectKey) {
+      var objectValue = $scope.party.temporaryObjects[objectKey];
+      if (objectValue > 0) {
+        var object = $scope.objects[objectKey];
+        if (typeof object != "undefined")
+          if (object.hasOwnProperty("effect"))
+            if(object.effect.hasOwnProperty("hp"))
+              hp += object.effect.hp;
       }
     });
 
@@ -197,6 +349,35 @@ function PartyController($scope, $http, $location) {
       }
     });
 
+    angular.forEach(_.keys($scope.party.buffs), function(buffKey) {
+      var buff = $scope.buffs[buffKey];
+      var buffValue = $scope.party.buffs[buffKey];
+      var buffOption = buff.options[buffValue];
+      if (typeof buffOption != "undefined")
+        if (buffOption.hasOwnProperty("effect"))
+          if(buffOption.effect.hasOwnProperty("mp"))
+            mp += buffOption.effect.mp;
+    });
+    angular.forEach(_.keys($scope.party.permanentObjects), function(objectKey) {
+      var objectValue = $scope.party.permanentObjects[objectKey];
+      if (objectValue > 0) {
+        var object = $scope.objects[objectKey];
+        if (typeof object != "undefined")
+          if (object.hasOwnProperty("effect"))
+            if(object.effect.hasOwnProperty("mp"))
+              mp += object.effect.mp;
+      }
+    });
+    angular.forEach(_.keys($scope.party.temporaryObjects), function(objectKey) {
+      var objectValue = $scope.party.temporaryObjects[objectKey];
+      if (objectValue > 0) {
+        var object = $scope.objects[objectKey];
+        if (typeof object != "undefined")
+          if (object.hasOwnProperty("effect"))
+            if(object.effect.hasOwnProperty("mp"))
+              mp += object.effect.mp;
+      }
+    });
     var bonus = .01 * $scope.computeMpPct(member) * mp;
     mp += bonus;
     return mp;
@@ -248,6 +429,37 @@ function PartyController($scope, $http, $location) {
       }
     });
 
+
+    angular.forEach(_.keys($scope.party.buffs), function(buffKey) {
+      var buff = $scope.buffs[buffKey];
+      var buffValue = $scope.party.buffs[buffKey];
+      var buffOption = buff.options[buffValue];
+      if (typeof buffOption != "undefined")
+        if (buffOption.hasOwnProperty("effect"))
+          if(buffOption.effect.hasOwnProperty("critical_pct"))
+            critical_pct += buffOption.effect.critical_pct;
+    });
+    angular.forEach(_.keys($scope.party.permanentObjects), function(objectKey) {
+      var objectValue = $scope.party.permanentObjects[objectKey];
+      if (objectValue > 0) {
+        var object = $scope.objects[objectKey];
+        if (typeof object != "undefined")
+          if (object.hasOwnProperty("effect"))
+            if(object.effect.hasOwnProperty("critical_pct"))
+              critical_pct += object.effect.critical_pct;
+      }
+    });
+    angular.forEach(_.keys($scope.party.temporaryObjects), function(objectKey) {
+      var objectValue = $scope.party.temporaryObjects[objectKey];
+      if (objectValue > 0) {
+        var object = $scope.objects[objectKey];
+        if (typeof object != "undefined")
+          if (object.hasOwnProperty("effect"))
+            if(object.effect.hasOwnProperty("critical_pct"))
+              critical_pct += object.effect.critical_pct;
+      }
+    });
+
     return critical_pct;
   }
 
@@ -258,6 +470,36 @@ function PartyController($scope, $http, $location) {
       if (character.hasOwnProperty("bonus"))
         if(character.bonus.hasOwnProperty("duration"))
         durationBonus += character.bonus.duration;
+
+    angular.forEach(_.keys($scope.party.buffs), function(buffKey) {
+      var buff = $scope.buffs[buffKey];
+      var buffValue = $scope.party.buffs[buffKey];
+      var buffOption = buff.options[buffValue];
+      if (typeof buffOption != "undefined")
+        if (buffOption.hasOwnProperty("effect"))
+          if(buffOption.effect.hasOwnProperty("duration"))
+            duration += buffOption.effect.duration;
+    });
+    angular.forEach(_.keys($scope.party.permanentObjects), function(objectKey) {
+      var objectValue = $scope.party.permanentObjects[objectKey];
+      if (objectValue > 0) {
+        var object = $scope.objects[objectKey];
+        if (typeof object != "undefined")
+          if (object.hasOwnProperty("effect"))
+            if(object.effect.hasOwnProperty("duration"))
+              duration += object.effect.duration;
+      }
+    });
+    angular.forEach(_.keys($scope.party.temporaryObjects), function(objectKey) {
+      var objectValue = $scope.party.temporaryObjects[objectKey];
+      if (objectValue > 0) {
+        var object = $scope.objects[objectKey];
+        if (typeof object != "undefined")
+          if (object.hasOwnProperty("effect"))
+            if(object.effect.hasOwnProperty("duration"))
+              duration += object.effect.duration;
+      }
+    });
     return durationBonus;
   }
 
@@ -468,4 +710,8 @@ function PartyController($scope, $http, $location) {
     if ($scope.party != null)
       $location.search({"party":angular.toJson($scope.party)});
   }, true);
+
+  $scope.reset= function() {
+
+  }
 }
