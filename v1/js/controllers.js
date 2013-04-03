@@ -478,7 +478,7 @@ function PartyController($scope, $http, $location) {
       if (typeof buffOption != "undefined")
         if (buffOption.hasOwnProperty("effect"))
           if(buffOption.effect.hasOwnProperty("duration"))
-            duration += buffOption.effect.duration;
+            durationBonus += buffOption.effect.duration;
     });
     angular.forEach(_.keys($scope.party.permanentObjects), function(objectKey) {
       var objectValue = $scope.party.permanentObjects[objectKey];
@@ -487,7 +487,7 @@ function PartyController($scope, $http, $location) {
         if (typeof object != "undefined")
           if (object.hasOwnProperty("effect"))
             if(object.effect.hasOwnProperty("duration"))
-              duration += object.effect.duration;
+              durationBonus += object.effect.duration;
       }
     });
     angular.forEach(_.keys($scope.party.temporaryObjects), function(objectKey) {
@@ -497,7 +497,7 @@ function PartyController($scope, $http, $location) {
         if (typeof object != "undefined")
           if (object.hasOwnProperty("effect"))
             if(object.effect.hasOwnProperty("duration"))
-              duration += object.effect.duration;
+              durationBonus += object.effect.duration;
       }
     });
     return durationBonus;
