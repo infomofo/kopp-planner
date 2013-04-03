@@ -441,11 +441,13 @@ function PartyController($scope, $http, $location) {
     return {title: title, content: tooltip}
   }
 
-  $scope.getBuffString = function(key) {
-    return "party.buffs."+key;
+  $scope.getObjectString = function(key) {
+    return "party.objects."+key;
   }
 
-  $scope.getBuff = function(key) {
-    return party.buffs[key];
+  $scope.getObjectTooltip = function(objectKey) {
+    //alert (angular.toJson($scope.objects[objectKey]));
+    var object = $scope.objects[objectKey];
+    return object.effect.description + " (" +object.type + ", " + object.cost + " gold)";
   }
 }

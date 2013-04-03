@@ -4,9 +4,21 @@
         "table":"Wood Table",
         "door":"Simple Bedroom Door"
         },
-    "table":"Wood Table",
-    "door":"Simple Bedroom Door",
-    "rug":"Rug",
+    "permanentObjects":{
+        "Crown":0,
+        "Holy Grail":0,
+        "Loaded Dice":0,
+        "Hourglass":0
+    },
+    "temporaryObjects":{
+    "Cake":0,
+    "Cookies":0,
+    "Chips":0,
+    "Pizza":0,
+    "Soda Can":0,
+    "Milk":0,
+    "Coffee":0,
+    "Soda Bottle":0},
     "members":[
     {
         "character": "unselected",

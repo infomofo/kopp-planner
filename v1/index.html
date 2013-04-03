@@ -68,7 +68,7 @@
                 </li>
                 <li class="dropdown">
                   <a class="dropdown-toggle">
-                    <img  ui-if="getJob(member)" ng:src="img/{{getJob(member).sprite}}" data-original-title="{{member.job}}" rel="popover" data-placement="right" data-content="{{getJob(member).role}}"/>
+                    <img  ui-if="getJob(member)" ng:src="img/{{getJob(member).sprite}}" data-original-title="{{member.job}}" rel="tooltip" data-placement="right" data-content="{{getJob(member).role}}"/>
                     <i ui-if="!getJob(member)" class="icon-question-sign"></i>
                     <span><b class="caret"></b></span>
                   </a>
@@ -183,13 +183,13 @@
           <div class="row span6 buff">
             <strong class="pull-left">Table Items</strong>
             <div class="span2 buff">
-              <label class="checkbox" ng-repeat="object in objects|filter:{type:'permanent'}" rel="tooltip" data-placement="bottom" data-original-title="{{object.effect.description}} ({{object.type}}, {{object.cost}} gold)">
-                <input type="checkbox"/> {{object.name}}
+              <label class="checkbox" ng-repeat="(objectKey, objectValue) in party.permanentObjects" rel="tooltip" data-placement="bottom" data-original-title="{{getObjectTooltip(objectKey)}}">
+                <button type="button" class="btn btn-small btn-success" ng-model="party.permanentObjects[objectKey]" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">{{objectKey}}</button>
               </label>
             </div>
             <div class="span2 buff">
-              <label class="checkbox" ng-repeat="object in objects|filter:{type:'temporary'}" rel="tooltip" data-placement="bottom" data-original-title="{{object.effect.description}} ({{object.type}}, {{object.cost}} gold)">
-                <input type="checkbox"/> {{object.name}}
+              <label class="checkbox" ng-repeat="(objectKey, objectValue) in party.temporaryObjects" rel="tooltip" data-placement="bottom" data-original-title="{{getObjectTooltip(objectKey)}}">
+                <button type="button" class="btn btn-warning btn-small" ng-model="party.temporaryObjects[objectKey]" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">{{objectKey}}</button>
               </label>
             </div>
           </div>

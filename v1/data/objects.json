@@ -1,5 +1,5 @@
-[
-    {
+{
+    "Crown":{
         "name": "Crown",
         "effect": {
             "description": "Can fight 7 monsters in battle"
@@ -7,7 +7,7 @@
         "cost": 8,
         "type": "permanent"
     },
-    {
+    "Holy Grail":{
         "name": "Holy Grail",
         "effect": {
             "description": "Can have 5 players at the table"
@@ -15,7 +15,7 @@
         "cost": 12,
         "type": "permanent"
     },
-    {
+    "Loaded Dice":{
         "name": "Loaded Dice",
         "effect": {
             "description": "+1 to all dice rolls",
@@ -24,7 +24,7 @@
         "cost": 500,
         "type": "permanent"
     },
-    {
+    "Hourglass":{
         "name": "Hourglass",
         "effect": {
             "description": "+1 skill duration",
@@ -33,7 +33,7 @@
         "cost": 750,
         "type": "permanent"
     },
-    {
+    "Cake":{
         "name": "Cake",
         "effect": {
             "description": "+10 Health +1% extra HP",
@@ -44,7 +44,7 @@
         "minutes":15,
         "type": "temporary"
     },
-    {
+    "Cookies":{
         "name": "Cookies",
         "effect": {
             "description": "+10 Magic +1% extra MP",
@@ -55,7 +55,7 @@
         "minutes":15,
         "type": "temporary"
     },
-    {
+    "Chips":{
         "name": "Chips",
         "effect": {
             "description": "+2% life steal",
@@ -65,7 +65,7 @@
         "minutes":15,
         "type": "temporary"
     },
-    {
+    "Pizza":{
         "name": "Pizza",
         "effect": {
             "description": "+2% Crit",
@@ -75,7 +75,7 @@
         "minutes":15,
         "type": "temporary"
     },
-    {
+    "Soda Can":{
         "name": "Soda Can",
         "effect": {
             "description": "+15% extra potion effect"
@@ -84,7 +84,7 @@
         "minutes":15,
         "type": "temporary"
     },
-    {
+    "Milk":{
         "name": "Milk",
         "effect": {
             "description": "+2% Crit",
@@ -94,7 +94,7 @@
         "minutes":15,
         "type": "temporary"
     },
-    {
+    "Coffee":{
         "name": "Coffee",
         "effect": {
             "description": "+10 Initiative",
@@ -104,7 +104,7 @@
         "minutes":15,
         "type": "temporary"
     },
-    {
+    "Soda Bottle":{
         "name": "Soda Bottle",
         "effect": {
             "description": "+35% extra potion effect"
@@ -113,4 +113,4 @@
         "minutes":15,
         "type": "temporary"
     }
-]
+}
