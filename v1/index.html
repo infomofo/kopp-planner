@@ -117,23 +117,67 @@
         </div>
         <div class="row span6 well">
           <div class="row span6 buff">
-            <strong>Dungeon Master</strong>
-            <div class="btn-group" data-toggle="buttons-checkbox">
-                <button type="button" class="btn btn-primary" ng-model="party.dm" btn-radio="'Comic Store Guy'"><small>Comic Store Guy</small></button>
-                <button type="button" class="btn btn-primary" ng-model="party.dm" btn-radio="'Dr. Cientist'"><small>Dr. Cientist</small></button>
-                <button type="button" class="btn btn-primary" ng-model="party.dm" btn-radio="'Karate Rat'"><small>Karate Rat</small></button>
-                <button type="button" class="btn btn-primary" ng-model="party.dm" btn-radio="'Dungeon'"><small>Dungeon</small></button>
-                <button type="button" class="btn btn-primary" ng-model="party.dm" btn-radio="'Yoga'"><small>Yoga</small></button>
+            <strong>Table</strong>
+            <div class="btn-group" bs-buttons-radio ng-model="party.buffs.table" >
+                <button type="button" class="btn btn-primary" ng-model="party.buffs.table" btn-radio="option.name" value="'{{option.name}}'" ng-repeat="option in buffs.table.options" rel="tooltip" data-placement="bottom" data-original-title="{{option.effect.description}} ({{option.cost}} gold)">
+                  <small>{{option.name}}</small>
+                </button>
             </div>
           </div> 
           <div class="row span6 buff">
-            <strong>Table</strong>
-            <div class="btn-group" data-toggle="buttons-checkbox">
-                <button type="button" class="btn btn-primary" ng-model="party.table" btn-radio="'Wood Table'"><small>Wood Table</small></button>
-                <button type="button" class="btn btn-primary" ng-model="party.table" btn-radio="'Snooker'"><small>Snooker</small></button>
-                <button type="button" class="btn btn-primary" ng-model="party.table" btn-radio="'Glass Table'"><small>Glass Table</small></button>
-                <button type="button" class="btn btn-primary" ng-model="party.table" btn-radio="'Golden Table'"><small>Golden Table</small></button>
-                <button type="button" class="btn btn-primary" ng-model="party.table" btn-radio="'Rock Table'"><small>Rock Table</small></button>
+            <strong>Dungeon Master</strong>
+            <div class="btn-group" bs-buttons-radio ng-model="party.buffs.dm" >
+                <button type="button" class="btn btn-primary" ng-model="party.buffs.dm" btn-radio="option.name" value="'{{option.name}}'" ng-repeat="option in buffs.dm.options" rel="tooltip" data-placement="bottom" data-original-title="{{option.effect.description}} ({{option.cost}} gold)">
+                  <small>{{option.name}}</small>
+                </button>
+            </div>
+          </div> 
+          <div class="row span6 buff">
+            <strong>Furniture (Left)</strong>
+            <div class="btn-group" bs-buttons-radio ng-model="party.buffs.fleft" >
+                <button type="button" class="btn btn-primary" ng-model="party.buffs.fleft" btn-radio="option.name" value="'{{option.name}}'" ng-repeat="option in buffs.fleft.options" rel="tooltip" data-placement="bottom" data-original-title="{{option.effect.description}} ({{option.cost}} gold)">
+                  <small>{{option.name}}</small>
+                </button>
+            </div>
+          </div> 
+          <div class="row span6 buff">
+            <strong>Furniture (Right)</strong>
+            <div class="btn-group" bs-buttons-radio ng-model="party.buffs.fright" >
+                <button type="button" class="btn btn-primary" ng-model="party.buffs.fright" btn-radio="option.name" value="'{{option.name}}'" ng-repeat="option in buffs.fright.options" rel="tooltip" data-placement="bottom" data-original-title="{{option.effect.description}} ({{option.cost}} gold)">
+                  <small>{{option.name}}</small>
+                </button>
+            </div>
+          </div> 
+          <div class="row span6 buff">
+            <strong>Door</strong>
+            <div class="btn-group" bs-buttons-radio ng-model="party.buffs.door" >
+                <button type="button" class="btn btn-primary" ng-model="party.buffs.door" btn-radio="option.name" value="'{{option.name}}'" ng-repeat="option in buffs.door.options" rel="tooltip" data-placement="bottom" data-original-title="{{option.effect.description}} ({{option.cost}} gold)">
+                  <small>{{option.name}}</small>
+                </button>
+            </div>
+          </div> 
+          <div class="row span6 buff">
+            <strong>Rug</strong>
+            <div class="btn-group" bs-buttons-radio ng-model="party.buffs.rug" >
+                <button type="button" class="btn btn-primary" ng-model="party.buffs.rug" btn-radio="option.name" value="'{{option.name}}'" ng-repeat="option in buffs.rug.options" rel="tooltip" data-placement="bottom" data-original-title="{{option.effect.description}} ({{option.cost}} gold)">
+                  <small>{{option.name}}</small>
+                </button>
+            </div>
+          </div> 
+          <div class="row span6 buff">
+            <strong>Book</strong>
+            <div class="btn-group" bs-buttons-radio ng-model="party.buffs.book" >
+                <button type="button" class="btn btn-primary" ng-model="party.buffs.book" btn-radio="option.name" value="'{{option.name}}'" ng-repeat="option in buffs.book.options" rel="tooltip" data-placement="bottom" data-original-title="{{option.effect.description}} ({{option.cost}} gold)">
+                  <small>{{option.name}}</small>
+                </button>
+            </div>
+          </div> 
+          <div class="row span6 buff">
+            <strong>Pet</strong>
+            <div class="btn-group" bs-buttons-radio ng-model="party.buffs.pet" >
+                <button type="button" class="btn btn-primary" ng-model="party.buffs.pet" btn-radio="option.name" value="'{{option.name}}'" ng-repeat="option in buffs.pet.options" rel="tooltip" data-placement="bottom" data-original-title="{{option.effect.description}} ({{option.cost}} gold)">
+                  <small>{{option.name}}</small>
+                </button>
             </div>
           </div> 
           <div class="row span6 buff">

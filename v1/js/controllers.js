@@ -440,4 +440,12 @@ function PartyController($scope, $http, $location) {
     var title = ability.name;
     return {title: title, content: tooltip}
   }
+
+  $scope.getBuffString = function(key) {
+    return "party.buffs."+key;
+  }
+
+  $scope.getBuff = function(key) {
+    return party.buffs[key];
+  }
 }

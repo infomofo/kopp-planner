@@ -1,9 +1,55 @@
-[
-    {
+{
+    "table":{
+        "key": "table",
+        "description": "Table",
+        "options": {
+            "Wood Table":{
+                "name": "Wood Table",
+                "effect": {
+                    "description": "+5% XP.",
+                    "xp_pct": 5
+                },
+                "cost": 0
+            },
+            "Snooker":{
+                "name": "Snooker",
+                "effect": {
+                    "description": "+5 life steal.",
+                    "mp_steal_pct": 5
+                },
+                "cost": 250
+            },
+            "Glass Table":{
+                "name": "Glass Table",
+                "effect": {
+                    "description": "+5% item find in battle.",
+                    "item_find_pct": 5
+                },
+                "cost": 250
+            },
+            "Golden Table":{
+                "name": "Golden Table",
+                "effect": {
+                    "description": "+10% gold on battle",
+                    "gold_pct": 10
+                },
+                "cost": 250
+            },
+            "Rock Table":{
+                "name": "Rock Table",
+                "effect": {
+                    "description": "+4% Crit.",
+                    "critical_pct": 4
+                },
+                "cost": 250
+            }
+        }
+    },
+    "dm":{
         "key": "dm",
         "description": "Dungeon Master",
-        "options": [
-            {
+        "options": {
+            "Dr. Cientist":{
                 "name": "Dr. Cientist",
                 "effect": {
                     "description": "+5 Magic. Regen 1 MP.",
@@ -12,7 +58,7 @@
                 },
                 "cost": 300
             },
-            {
+            "Comic Store Guy":{
                 "name": "Comic Store Guy",
                 "effect": {
                     "description": "+4% XP.",
@@ -20,7 +66,7 @@
                 },
                 "cost": 0
             },
-            {
+            "Karate Rat":{
                 "name": "Karate Rat",
                 "effect": {
                     "description": "+1 Atk +5 Magic.",
@@ -29,7 +75,7 @@
                 },
                 "cost": 300
             },
-            {
+            "Dungeon":{
                 "name": "Dungeon",
                 "effect": {
                     "description": "-15% Travel cost. +50% travel speed.",
@@ -38,7 +84,7 @@
                 },
                 "cost": 300
             },
-            {
+            "Yoga":{
                 "name": "Yoga",
                 "effect": {
                     "description": "+10% extra Health.",
@@ -46,30 +92,228 @@
                 },
                 "cost": 300
             }
-        ]
+        }
     },
-    {
+    "fleft":{
         "key": "fleft",
-        "description": "Furniture (left)"
+        "description": "Furniture (left)",
+        "options": {
+            "Map":{
+                "name": "Map",
+                "effect": {
+                    "description": "-20% resurrect cost. -15% travel cost.",
+                    "resurrect_cost_pct": -20,
+                    "travel_cost_pct": -15
+                },
+                "cost": 200
+            },
+            "Arcade":{
+                "name": "Arcade",
+                "effect": {
+                    "description": "+5% extra Health.",
+                    "hp_pct": 5
+                },
+                "cost": 200
+            },
+            "Shelf":{
+                "name": "Shelf",
+                "effect": {
+                    "description": "+4% extra Magic.",
+                    "mp_pct": 4
+                },
+                "cost": 200
+            },
+            "Armor":{
+                "name": "Armor",
+                "effect": {
+                    "description": "+20 Health",
+                    "hp": 20
+                },
+                "cost": 200
+            }
+        }
     },
-    {
+    "fright":{
         "key": "fright",
-        "description": "Furniture (right)"
+        "description": "Furniture (right)",
+        "options":{
+            "Sword and Shield":{
+                "name":"Sword and Shield",
+                "effect": {
+                    "description": "-10% blacksmith cost.",
+                    "blacksmithing_cost_pct": -10
+                },
+                "cost": 200
+            },
+            "Picture":{
+                "name":"Picture",
+                "effect": {
+                    "description": "-20% crafting time.",
+                    "crafting_time_pct": -20
+                },
+                "cost": 200
+            },
+            "Couch":{
+                "name":"Couch",
+                "effect": {
+                    "description": "+40 resting speed.",
+                    "resting_speed": 40
+                },
+                "cost": 200
+            },
+            "Your Telly":{
+                "name":"Your Telly",
+                "effect": {
+                    "description": "+8% purchased gold.",
+                    "purchased_gold_pct": 8
+                },
+                "cost": 200
+            }
+        }
     },
-    {
+    "door":{
         "key": "door",
-        "description": "Door"
+        "description": "Door",
+        "options": {
+            "Simple Bedroom Door":{
+                "name":"Simple Bedroom Door",
+                "effect": {
+                    "description": "+1% XP.",
+                    "xp_pct": 1
+                },
+                "cost": 0
+            },
+            "Dungeon Door":{
+                "name":"Dungeon Door",
+                "effect": {
+                    "description": "+1 Atk.",
+                    "atk": 1
+                },
+                "cost": 200
+            },
+            "Forest Door":{
+                "name":"Forest Door",
+                "effect": {
+                    "description": "Regen 1 HP.",
+                    "hp_regen": 1
+                },
+                "cost": 200
+            },
+            "Prison Door":{
+                "name":"Prison Door",
+                "effect": {
+                    "description": "+1% Crit.",
+                    "critical_pct": 1
+                },
+                "cost": 200
+            }
+        }
     },
-    {
+    "rug":{
         "key": "rug",
-        "description": "Rug"
+        "description": "Rug",
+        "options": {
+            "Rug":{
+                "name":"Rug",
+                "effect": {
+                    "description": "+2% XP.",
+                    "xp_pct": 2
+                },
+                "cost": 0
+            },
+            "Red Carpet":{
+                "name":"Red Carpet",
+                "effect": {
+                    "description": "+4% gold on battle.",
+                    "gold_pct": 4
+                },
+                "cost": 100
+            },
+            "Magic Carpet":{
+                "name":"Magic Carpet",
+                "effect": {
+                    "description": "-10% travel cost.",
+                    "travel_cost_pct": -10
+                },
+                "cost": 100
+            },
+            "Bear Fur Carpet":{
+                "name":"Bear Fur Carpet",
+                "effect": {
+                    "description": "+10 Health.",
+                    "hp": 10
+                },
+                "cost": 100
+            }
+        }
     },
-    {
+    "book":{
         "key": "book",
-        "description": "Book"
+        "description": "Book",
+        "options": {
+            "Master Book":{
+                "name":"Master Book",
+                "effect": {
+                    "description": "+2% item find on battle.",
+                    "item_find_pct": 2
+                },
+                "cost": 150
+            },
+            "Player Book":{
+                "name":"Player Book",
+                "effect": {
+                    "description": "+1 Atk.",
+                    "atk": 1
+                },
+                "cost": 150
+            },
+            "Monster Book":{
+                "name":"Monster Book",
+                "effect": {
+                    "description": "Regen 1 HP. Regen 1 MP.",
+                    "hp_regen": 1,
+                    "mp_regen": 1
+                },
+                "cost": 100
+            }
+        }
     },
-    {
+    "pet":{
         "key": "pet",
-        "description": "Pet"
+        "description": "Pet",
+        "options": {
+            "Dog":{
+                "name":"Dog",
+                "effect": {
+                    "description": "+7 min duration to table items.",
+                    "table_item_duration": 7
+                },
+                "cost": 100
+            },
+            "Mr. Beaver":{
+                "name":"Mr. Beaver",
+                "effect": {
+                    "description": "-10% crafting time.",
+                    "crafting_time_pct": -10
+                },
+                "cost": 100
+            },
+            "Dragon":{
+                "name":"Dragon",
+                "effect": {
+                    "description": "+1 Atk",
+                    "atk": 1
+                },
+                "cost": 100
+            },
+            "Fish":{
+                "name":"Fish",
+                "effect": {
+                    "description": "-20% resurrect cost.",
+                    "resurrect_cost_pct": 20
+                },
+                "cost": 100
+            }
+        }
     }
-]
+}

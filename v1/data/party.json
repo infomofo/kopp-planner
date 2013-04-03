@@ -1,5 +1,9 @@
 {
-    "dm":"Comic Store Guy",
+    "buffs":{
+        "dm":"Comic Store Guy",
+        "table":"Wood Table",
+        "door":"Simple Bedroom Door"
+        },
     "table":"Wood Table",
     "door":"Simple Bedroom Door",
     "rug":"Rug",
